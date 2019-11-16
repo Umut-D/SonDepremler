@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Son_Depremler.Siniflar.Baglanti">
+    <Position X="1.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DAAAAAAAAAABAAAAACAAAAAAAAgAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Siniflar\Baglanti.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Son_Depremler.Siniflar.Depremler">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIACAAAAAAAAAAAAAABEAAAAAAAAA=</HashCode>
+      <FileName>Siniflar\Depremler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Son_Depremler.Siniflar.Harita">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Siniflar\Harita.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9.13" />
+</ClassDiagram>
