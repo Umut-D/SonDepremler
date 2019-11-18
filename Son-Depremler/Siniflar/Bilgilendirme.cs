@@ -31,7 +31,7 @@ namespace Son_Depremler.Siniflar
         {
             DateTime tarih = DateTime.Now;
 
-            return "Son Güncelleme: " + tarih.ToLongTimeString() + " (Sonraki otomatik güncelleme:" + tarih.AddMinutes(5).ToLongTimeString() + ")";
+            return "Son Güncelleme: " + tarih.ToLongTimeString() + " (Sonraki otomatik güncelleme: " + tarih.AddMinutes(5).ToLongTimeString() + ")";
         }
 
         public void Hakkinda()

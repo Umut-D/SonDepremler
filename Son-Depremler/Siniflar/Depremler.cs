@@ -37,12 +37,12 @@ namespace Son_Depremler.Siniflar
             {
                 string[] dizi = Regex.Split(satirlar[j], @"[ \t]{2,}");
 
-                ListViewItem lviNesnesi = new ListViewItem(dizi[0]);
-                lviNesnesi.SubItems.Add(dizi[1]);
-                lviNesnesi.SubItems.Add(dizi[2]);
-                lviNesnesi.SubItems.Add(dizi[3]);
-                lviNesnesi.SubItems.Add(dizi[5]);
-                lviNesnesi.SubItems.Add(dizi[7]);
+                ListViewItem lviNesnesi = new ListViewItem(dizi[0]); // Tarih
+                lviNesnesi.SubItems.Add(dizi[1]); // Enlem
+                lviNesnesi.SubItems.Add(dizi[2]); // Boylam
+                lviNesnesi.SubItems.Add(dizi[3]); // Derinlik
+                lviNesnesi.SubItems.Add(dizi[5]); // Şiddet
+                lviNesnesi.SubItems.Add(dizi[7]); // Yer
 
                 lvListe.Items.Add(lviNesnesi);
             }
@@ -86,7 +86,7 @@ namespace Son_Depremler.Siniflar
                     else if (olcek >= 42 && olcek <= 60)
                     {
                         lvNesne.SubItems[4].BackColor = Color.Orange;
-                        lvNesne.SubItems[4].ForeColor = Color.White;
+                        lvNesne.SubItems[4].ForeColor = Color.Black;
                     }
                     else if (olcek >= 61 && olcek <= 73)
                     {

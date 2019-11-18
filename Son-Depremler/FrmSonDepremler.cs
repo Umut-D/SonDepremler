@@ -96,7 +96,6 @@ namespace Son_Depremler
 
         private void CmsGoster_Click(object sender, EventArgs e)
         {
-            // Bağlam menüsü > Göster
             Show();
             WindowState = FormWindowState.Normal;
         }

@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Net;
-using System.Net.NetworkInformation;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml;
@@ -16,13 +16,28 @@ namespace Son_Depremler.Siniflar
         private static string Adres { get; } = @"http://www.koeri.boun.edu.tr/scripts/lst7.asp";
         private static string GuncellemeAdres => @"https://raw.githubusercontent.com/Umut-D/umutd.com/master/assets/program-versions/son-depremler.xml";
         private static string Versiyon { get; set; } = "1.00";
+        
+        // İnternet bağlatısını kontrol etmek için wininet.dll'yi kullanıp işletim sistemi kaynaklarına eriş
+        [DllImport("wininet.dll", CharSet = CharSet.Auto)]
+        private static extern bool InternetGetConnectedState(ref InternetConnectionStateFlags lpdwFlags, int dwReserved);
 
-        // İnternet bağlantısının olup olmadığını Google'a ping atarak test et
+        [Flags]
+        private enum InternetConnectionStateFlags
+        {
+            INTERNET_CONNECTION_MODEM = 0x01,
+            INTERNET_CONNECTION_LAN = 0x02,
+            INTERNET_CONNECTION_PROXY = 0x04,
+            INTERNET_RAS_INSTALLED = 0x10,
+            INTERNET_CONNECTION_OFFLINE = 0x20,
+            INTERNET_CONNECTION_CONFIGURED = 0x40
+        }
+
         private static bool InternetKontrol()
         {
-            PingReply pingDurum = new Ping().Send("www.google.com", 1000);
+            InternetConnectionStateFlags flags = 0;
+            bool durum = InternetGetConnectedState(ref flags, 0);
 
-            if (pingDurum?.Status == IPStatus.Success)
+            if (durum)
                 return true;
 
             return false;
