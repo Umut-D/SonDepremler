@@ -25,12 +25,11 @@ namespace Son_Depremler
             {
                 ListViewItem lviSeciliNesne = listView.SelectedItems[0];
 
-                Harita harita = new Harita
-                {
-                    Enlem = lviSeciliNesne.SubItems[1].Text,
-                    Boylam = lviSeciliNesne.SubItems[2].Text
-                };
+                // Enlem ve boylam değerlerini alıp Harita sınıfına yolla
+                string enlem = lviSeciliNesne.SubItems[1].Text;
+                string boylam = lviSeciliNesne.SubItems[2].Text;
 
+                Harita harita = new Harita(enlem, boylam);
                 harita.Ac();
             }
         }

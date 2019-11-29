@@ -13,9 +13,9 @@ namespace Son_Depremler.Siniflar
 {
     public class Baglanti
     {
-        private static string Adres { get; } = @"http://www.koeri.boun.edu.tr/scripts/lst7.asp";
-        private static string GuncellemeAdres => @"https://raw.githubusercontent.com/Umut-D/umutd.com/master/assets/program-versions/son-depremler.xml";
-        private static string Versiyon { get; set; } = "1.00";
+        private static string _adres = @"http://www.koeri.boun.edu.tr/scripts/lst7.asp";
+        private static string _guncellemeAdres = @"https://raw.githubusercontent.com/Umut-D/umutd.com/master/assets/program-versions/son-depremler.xml";
+        private static string _versiyon = "1.00";
         
         // İnternet bağlatısını kontrol etmek için wininet.dll'yi kullanıp işletim sistemi kaynaklarına eriş
         [DllImport("wininet.dll", CharSet = CharSet.Auto)]
@@ -48,7 +48,7 @@ namespace Son_Depremler.Siniflar
             if (InternetKontrol())
             {
                 HtmlDocument htmlBelge = new HtmlDocument();
-                WebRequest webIstemi = WebRequest.Create(Adres);
+                WebRequest webIstemi = WebRequest.Create(_adres);
                 WebResponse webDonusDegeri = webIstemi.GetResponse();
                 StreamReader oku = new StreamReader(webDonusDegeri.GetResponseStream() ?? throw new InvalidOperationException());
 
@@ -78,8 +78,7 @@ namespace Son_Depremler.Siniflar
                 WebClient webIstemcisi = new WebClient();
                 webIstemcisi.Headers.Add("user-agent", "MyRSSReader/1.0");
 
-                XmlReader xmlOku =
-                    XmlReader.Create(webIstemcisi.OpenRead(GuncellemeAdres) ?? throw new InvalidOperationException());
+                XmlReader xmlOku = XmlReader.Create(webIstemcisi.OpenRead(_guncellemeAdres) ?? throw new InvalidOperationException());
 
                 while (xmlOku.Read())
                 {
@@ -87,14 +86,13 @@ namespace Son_Depremler.Siniflar
                     if (xmlOku.NodeType != XmlNodeType.Element || xmlOku.Name != "depremler" || !xmlOku.HasAttributes)
                         continue;
 
-                    Versiyon = xmlOku.GetAttribute("version");
+                    _versiyon = xmlOku.GetAttribute("version");
 
-                    if (Versiyon == "1.00")
+                    if (_versiyon == "1.00")
                         MessageBox.Show(@"Program günceldir. Yeni versiyon çıkana kadar şimdilik en iyisi bu.", @"Güncelle", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     else
                     {
-                        DialogResult guncelleDiyalog = MessageBox.Show(
-                            @"Yeni bir güncelleme var. Evet evet, programı " + Versiyon +
+                        DialogResult guncelleDiyalog = MessageBox.Show(@"Yeni bir güncelleme var. Evet evet, programı " + _versiyon +
                             @" versiyonuna yükselttim. Yenilikler var. Web sayfasına girip indirmek ister misiniz?", @"Güncelle", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
                         if (guncelleDiyalog == DialogResult.OK)

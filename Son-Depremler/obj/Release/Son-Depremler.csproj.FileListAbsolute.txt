@@ -10,18 +10,6 @@ D:\Belgelerim\Programlar\C#\Son-Depremler\Son-Depremler\obj\Release\Son-Depremle
 D:\Belgelerim\Programlar\C#\Son-Depremler\Son-Depremler\obj\Release\Son-Depremler.csproj.CopyComplete
 D:\Belgelerim\Programlar\C#\Son-Depremler\Son-Depremler\obj\Release\Son Depremler.exe
 D:\Belgelerim\Programlar\C#\Son-Depremler\Son-Depremler\obj\Release\Son Depremler.pdb
-C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\bin\Release\Son Depremler.exe
-C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\bin\Release\Son Depremler.pdb
-C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\bin\Release\HtmlAgilityPack.dll
-C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\bin\Release\HtmlAgilityPack.pdb
-C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\bin\Release\HtmlAgilityPack.xml
-C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Release\Son_Depremler.FrmSonDepremler.resources
-C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Release\Son_Depremler.Properties.Resources.resources
-C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Release\Son-Depremler.csproj.GenerateResource.cache
-C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Release\Son-Depremler.csproj.CoreCompileInputs.cache
-C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Release\Son-Depremler.csproj.CopyComplete
-C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Release\Son Depremler.exe
-C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Release\Son Depremler.pdb
 D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\bin\Release\Son Depremler.exe
 D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\bin\Release\Son Depremler.pdb
 D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\bin\Release\HtmlAgilityPack.dll
@@ -35,3 +23,15 @@ D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Release\Son
 D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Release\Son Depremler.exe
 D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Release\Son Depremler.pdb
 D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Release\Son-Depremler.csprojAssemblyReference.cache
+C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\bin\Release\Son Depremler.exe
+C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\bin\Release\Son Depremler.pdb
+C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\bin\Release\HtmlAgilityPack.dll
+C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\bin\Release\HtmlAgilityPack.pdb
+C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\bin\Release\HtmlAgilityPack.xml
+C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Release\Son_Depremler.FrmSonDepremler.resources
+C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Release\Son_Depremler.Properties.Resources.resources
+C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Release\Son-Depremler.csproj.GenerateResource.cache
+C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Release\Son-Depremler.csproj.CoreCompileInputs.cache
+C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Release\Son-Depremler.csproj.CopyComplete
+C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Release\Son Depremler.exe
+C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Release\Son Depremler.pdb

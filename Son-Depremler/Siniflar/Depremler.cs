@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Drawing;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -7,21 +7,17 @@ using System.Windows.Forms;
 
 namespace Son_Depremler.Siniflar
 {
-    class Depremler
+    class Depremler : FormAraclari
     {
-        public string IlkZaman { get; set; }
-        public string SonZaman { get; set; }
+        private string _ilkZaman;
+        private string _sonZaman;
+        private string _tarih;
+        private string _enlem;
+        private string _boylam;
+        private string _derinlik;
+        private string _siddet;
+        private string _yer;
         readonly Bilgilendirme _bilgilendirme = new Bilgilendirme();
-
-        // Son deprem zamanını kıyasla (Kullanıcıya bilgilendirme mesajı göstermek için gerekli)
-        private void ZamanKiyasla(string ilkZaman, string sonZaman, ListView lvListe)
-        {
-            IlkZaman = ilkZaman;
-            SonZaman = sonZaman;
-
-            if (IlkZaman != sonZaman)
-                _bilgilendirme.SonDeprem(lvListe);
-        }
 
         // İndirilen sayfayı ayrıştır ve listeye taşı
         private void ListeOlustur(ListView lvListe)
@@ -37,76 +33,57 @@ namespace Son_Depremler.Siniflar
             {
                 string[] dizi = Regex.Split(satirlar[j], @"[ \t]{2,}");
 
-                ListViewItem lviNesnesi = new ListViewItem(dizi[0]); // Tarih
-                lviNesnesi.SubItems.Add(dizi[1]); // Enlem
-                lviNesnesi.SubItems.Add(dizi[2]); // Boylam
-                lviNesnesi.SubItems.Add(dizi[3]); // Derinlik
-                lviNesnesi.SubItems.Add(dizi[5]); // Şiddet
-                lviNesnesi.SubItems.Add(dizi[7]); // Yer
+                List<Depremler> depremler = new List<Depremler>
+                {
+                    new Depremler
+                    {
+                        _tarih = dizi[0],
+                        _enlem = dizi[1],
+                        _boylam = dizi[2],
+                        _derinlik = dizi[3],
+                        _siddet = dizi[5],
+                        _yer = dizi[7]
+                    }
+                };
 
-                lvListe.Items.Add(lviNesnesi);
+                foreach (Depremler deprem in depremler)
+                {
+                    ListViewItem lviNesnesi = new ListViewItem(deprem._tarih);
+                    lviNesnesi.SubItems.Add(deprem._enlem);
+                    lviNesnesi.SubItems.Add(deprem._boylam);
+                    lviNesnesi.SubItems.Add(deprem._derinlik);
+                    lviNesnesi.SubItems.Add(deprem._siddet);
+                    lviNesnesi.SubItems.Add(deprem._yer);
+
+                    lvListe.Items.Add(lviNesnesi);
+                }
             }
 
-            IlkZaman = lvListe.Items[0].Text;
-
             OlcekRenklendir(lvListe);
+
             _bilgilendirme.SonGuncelleme();
-            ZamanKiyasla(IlkZaman, SonZaman, lvListe);
+
+            _ilkZaman = lvListe.Items[0].Text;
+            ZamanKiyasla(_ilkZaman, _sonZaman, lvListe);
         }
 
         public void Listele(ListView lvListe, Timer zamanlayici)
         {
             ListeOlustur(lvListe);
 
-            SonZaman = lvListe.Items[0].Text;
+            _sonZaman = lvListe.Items[0].Text;
 
             TimerSifirla(zamanlayici);
         }
 
-        // Depremlerin şiddetine göre renklendirme yap
-        private static void OlcekRenklendir(ListView lvListe)
+        // Son deprem zamanını kıyasla (Kullanıcıya bilgilendirme mesajı göstermek için gerekli)
+        private void ZamanKiyasla(string ilkZaman, string sonZaman, ListView lvListe)
         {
-            foreach (ListViewItem lvNesne in lvListe.Items)
-            {
-                lvNesne.UseItemStyleForSubItems = false;
+            _ilkZaman = ilkZaman;
+            _sonZaman = sonZaman;
 
-                for (int i = 0; i < 1; i++)
-                {
-                    double olcek = Convert.ToDouble(lvNesne.SubItems[4].Text);
-                    if (olcek <= 29)
-                    {
-                        lvNesne.SubItems[4].BackColor = Color.GreenYellow;
-                        lvNesne.SubItems[4].ForeColor = Color.Black;
-                    }
-                    else if (olcek >= 30 && olcek <= 41)
-                    {
-                        lvNesne.SubItems[4].BackColor = Color.DarkGreen;
-                        lvNesne.SubItems[4].ForeColor = Color.White;
-                    }
-                    else if (olcek >= 42 && olcek <= 60)
-                    {
-                        lvNesne.SubItems[4].BackColor = Color.Orange;
-                        lvNesne.SubItems[4].ForeColor = Color.Black;
-                    }
-                    else if (olcek >= 61 && olcek <= 73)
-                    {
-                        lvNesne.SubItems[4].BackColor = Color.OrangeRed;
-                        lvNesne.SubItems[4].ForeColor = Color.White;
-                    }
-                    else // Allah korusun
-                    {
-                        lvNesne.SubItems[4].BackColor = Color.DarkRed;
-                        lvNesne.SubItems[4].ForeColor = Color.White;
-                    }
-                }
-            }
-        }
-
-        private void TimerSifirla(Timer zamanlayici)
-        {
-            zamanlayici.Stop();
-            zamanlayici.Start();
-            zamanlayici.Interval = 1000 * 60 * 5; // 5 dakikada bir istem yap
+            if (_ilkZaman != _sonZaman)
+                _bilgilendirme.SonDeprem(lvListe);
         }
     }
 }

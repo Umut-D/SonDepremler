@@ -62,6 +62,7 @@
     <Compile Include="Siniflar\Baglanti.cs" />
     <Compile Include="Siniflar\Bilgilendirme.cs" />
     <Compile Include="Siniflar\Depremler.cs" />
+    <Compile Include="Siniflar\FormAraclari.cs" />
     <Compile Include="Siniflar\Harita.cs" />
     <EmbeddedResource Include="FrmSonDepremler.resx">
       <DependentUpon>FrmSonDepremler.cs</DependentUpon>
