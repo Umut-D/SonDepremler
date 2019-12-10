@@ -39,6 +39,16 @@
             this.chYer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.zamanlayici = new System.Windows.Forms.Timer(this.components);
             this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.tsmiAyarlar = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiGuncellemeSikligi = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi1Dakika = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi5Dakika = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi10Dakika = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi15Dakika = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi30Dakika = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiBildirimSesi = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAcik = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiKapali = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiBilgi = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiGuncelle = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiHakkinda = new System.Windows.Forms.ToolStripMenuItem();
@@ -118,12 +128,92 @@
             // 
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(22, 22);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiAyarlar,
             this.tsmiBilgi});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(754, 31);
             this.menuStrip.TabIndex = 1;
             this.menuStrip.Text = "menuStrip";
+            // 
+            // tsmiAyarlar
+            // 
+            this.tsmiAyarlar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiGuncellemeSikligi,
+            this.tsmiBildirimSesi});
+            this.tsmiAyarlar.Name = "tsmiAyarlar";
+            this.tsmiAyarlar.Size = new System.Drawing.Size(79, 27);
+            this.tsmiAyarlar.Text = "Ayarlar";
+            // 
+            // tsmiGuncellemeSikligi
+            // 
+            this.tsmiGuncellemeSikligi.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmi1Dakika,
+            this.tsmi5Dakika,
+            this.tsmi10Dakika,
+            this.tsmi15Dakika,
+            this.tsmi30Dakika});
+            this.tsmiGuncellemeSikligi.Name = "tsmiGuncellemeSikligi";
+            this.tsmiGuncellemeSikligi.Size = new System.Drawing.Size(242, 30);
+            this.tsmiGuncellemeSikligi.Text = "Güncelleme Sıklığı";
+            // 
+            // tsmi1Dakika
+            // 
+            this.tsmi1Dakika.Name = "tsmi1Dakika";
+            this.tsmi1Dakika.Size = new System.Drawing.Size(175, 30);
+            this.tsmi1Dakika.Text = "1 dakika";
+            this.tsmi1Dakika.Click += new System.EventHandler(this.Tsmi1Dakika_Click);
+            // 
+            // tsmi5Dakika
+            // 
+            this.tsmi5Dakika.Name = "tsmi5Dakika";
+            this.tsmi5Dakika.Size = new System.Drawing.Size(175, 30);
+            this.tsmi5Dakika.Text = "5 dakika";
+            this.tsmi5Dakika.Click += new System.EventHandler(this.Tsmi5Dakika_Click);
+            // 
+            // tsmi10Dakika
+            // 
+            this.tsmi10Dakika.Name = "tsmi10Dakika";
+            this.tsmi10Dakika.Size = new System.Drawing.Size(175, 30);
+            this.tsmi10Dakika.Text = "10 dakika";
+            this.tsmi10Dakika.Click += new System.EventHandler(this.Tsmi10Dakika_Click);
+            // 
+            // tsmi15Dakika
+            // 
+            this.tsmi15Dakika.Name = "tsmi15Dakika";
+            this.tsmi15Dakika.Size = new System.Drawing.Size(175, 30);
+            this.tsmi15Dakika.Text = "15 dakika";
+            this.tsmi15Dakika.Click += new System.EventHandler(this.Tsmi15Dakika_Click);
+            // 
+            // tsmi30Dakika
+            // 
+            this.tsmi30Dakika.Name = "tsmi30Dakika";
+            this.tsmi30Dakika.Size = new System.Drawing.Size(175, 30);
+            this.tsmi30Dakika.Text = "30 dakika";
+            this.tsmi30Dakika.Click += new System.EventHandler(this.Tsmi30Dakika_Click);
+            // 
+            // tsmiBildirimSesi
+            // 
+            this.tsmiBildirimSesi.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiAcik,
+            this.tsmiKapali});
+            this.tsmiBildirimSesi.Name = "tsmiBildirimSesi";
+            this.tsmiBildirimSesi.Size = new System.Drawing.Size(242, 30);
+            this.tsmiBildirimSesi.Text = "Bildirim Sesi";
+            // 
+            // tsmiAcik
+            // 
+            this.tsmiAcik.Name = "tsmiAcik";
+            this.tsmiAcik.Size = new System.Drawing.Size(150, 30);
+            this.tsmiAcik.Text = "Açık";
+            this.tsmiAcik.Click += new System.EventHandler(this.TsmiAcik_Click);
+            // 
+            // tsmiKapali
+            // 
+            this.tsmiKapali.Name = "tsmiKapali";
+            this.tsmiKapali.Size = new System.Drawing.Size(150, 30);
+            this.tsmiKapali.Text = "Kapalı";
+            this.tsmiKapali.Click += new System.EventHandler(this.TsmiKapali_Click);
             // 
             // tsmiBilgi
             // 
@@ -191,19 +281,19 @@
             this.cmsGoster,
             this.cmsCikis});
             this.cmsSagTikMenu.Name = "cmsSagTikMenu";
-            this.cmsSagTikMenu.Size = new System.Drawing.Size(229, 91);
+            this.cmsSagTikMenu.Size = new System.Drawing.Size(131, 60);
             // 
             // cmsGoster
             // 
             this.cmsGoster.Name = "cmsGoster";
-            this.cmsGoster.Size = new System.Drawing.Size(228, 28);
+            this.cmsGoster.Size = new System.Drawing.Size(130, 28);
             this.cmsGoster.Text = "Goster";
             this.cmsGoster.Click += new System.EventHandler(this.CmsGoster_Click);
             // 
             // cmsCikis
             // 
             this.cmsCikis.Name = "cmsCikis";
-            this.cmsCikis.Size = new System.Drawing.Size(228, 28);
+            this.cmsCikis.Size = new System.Drawing.Size(130, 28);
             this.cmsCikis.Text = "Çıkış";
             this.cmsCikis.Click += new System.EventHandler(this.CmsKapat_Click);
             // 
@@ -258,6 +348,16 @@
         private System.Windows.Forms.ContextMenuStrip cmsSagTikMenu;
         private System.Windows.Forms.ToolStripMenuItem cmsGoster;
         private System.Windows.Forms.ToolStripMenuItem cmsCikis;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAyarlar;
+        public System.Windows.Forms.ToolStripMenuItem tsmiGuncellemeSikligi;
+        public System.Windows.Forms.ToolStripMenuItem tsmi1Dakika;
+        public System.Windows.Forms.ToolStripMenuItem tsmi5Dakika;
+        public System.Windows.Forms.ToolStripMenuItem tsmi10Dakika;
+        public System.Windows.Forms.ToolStripMenuItem tsmi15Dakika;
+        public System.Windows.Forms.ToolStripMenuItem tsmi30Dakika;
+        public System.Windows.Forms.ToolStripMenuItem tsmiBildirimSesi;
+        public System.Windows.Forms.ToolStripMenuItem tsmiAcik;
+        public System.Windows.Forms.ToolStripMenuItem tsmiKapali;
     }
 }
 

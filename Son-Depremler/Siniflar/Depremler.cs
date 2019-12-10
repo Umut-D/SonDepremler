@@ -4,64 +4,39 @@ using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using Son_Depremler.Properties;
 
 namespace Son_Depremler.Siniflar
 {
-    class Depremler : FormAraclari
+    class Depremler
     {
         private string _ilkZaman;
         private string _sonZaman;
-        private string _tarih;
-        private string _enlem;
-        private string _boylam;
-        private string _derinlik;
-        private string _siddet;
-        private string _yer;
-        readonly Bilgilendirme _bilgilendirme = new Bilgilendirme();
+        private readonly FormAraclari _formAraclari = new FormAraclari(null);
+        private readonly Bilgilendir _bilgilendir = new Bilgilendir();
 
         // İndirilen sayfayı ayrıştır ve listeye taşı
         private void ListeOlustur(ListView lvListe)
         {
             lvListe.Items.Clear();
+            Baglanti.VeriAl();
 
-            Baglanti.VeriCek();
-
-            // Yazılan bilgileri diziye aktar
-            string[] satirlar = File.ReadAllLines(Environment.CurrentDirectory + "//depremler", Encoding.UTF8);
-
+            List<string> satirlar = new List<string>(File.ReadAllLines(Environment.CurrentDirectory + "//depremler", Encoding.UTF8));
             for (int j = 7; j < 27; j++)
             {
-                string[] dizi = Regex.Split(satirlar[j], @"[ \t]{2,}");
+                List<string> dizi = new List<string>(Regex.Split(satirlar[j], @"[ \t]{2,}"));
 
-                List<Depremler> depremler = new List<Depremler>
-                {
-                    new Depremler
-                    {
-                        _tarih = dizi[0],
-                        _enlem = dizi[1],
-                        _boylam = dizi[2],
-                        _derinlik = dizi[3],
-                        _siddet = dizi[5],
-                        _yer = dizi[7]
-                    }
-                };
-
-                foreach (Depremler deprem in depremler)
-                {
-                    ListViewItem lviNesnesi = new ListViewItem(deprem._tarih);
-                    lviNesnesi.SubItems.Add(deprem._enlem);
-                    lviNesnesi.SubItems.Add(deprem._boylam);
-                    lviNesnesi.SubItems.Add(deprem._derinlik);
-                    lviNesnesi.SubItems.Add(deprem._siddet);
-                    lviNesnesi.SubItems.Add(deprem._yer);
-
-                    lvListe.Items.Add(lviNesnesi);
-                }
+                ListViewItem lviNesnesi = new ListViewItem(dizi[0]); // Tarih
+                lviNesnesi.SubItems.Add(dizi[1]); // Enlem
+                lviNesnesi.SubItems.Add(dizi[2]); // Boylam
+                lviNesnesi.SubItems.Add(dizi[3]); // Derinlik
+                lviNesnesi.SubItems.Add(dizi[5]); // Şiddet
+                lviNesnesi.SubItems.Add(dizi[7]); // Yer
+                lvListe.Items.Add(lviNesnesi);
             }
 
-            OlcekRenklendir(lvListe);
-
-            _bilgilendirme.SonGuncelleme();
+            _formAraclari.DepremSiddetiRenklendir(lvListe);
+            _bilgilendir.SonGuncelleme();
 
             _ilkZaman = lvListe.Items[0].Text;
             ZamanKiyasla(_ilkZaman, _sonZaman, lvListe);
@@ -71,9 +46,10 @@ namespace Son_Depremler.Siniflar
         {
             ListeOlustur(lvListe);
 
-            _sonZaman = lvListe.Items[0].Text;
+            int dakika = (int)Settings.Default["Dakika"];
 
-            TimerSifirla(zamanlayici);
+            _sonZaman = lvListe.Items[0].Text;
+            _formAraclari.TimerSifirla(zamanlayici, dakika);
         }
 
         // Son deprem zamanını kıyasla (Kullanıcıya bilgilendirme mesajı göstermek için gerekli)
@@ -83,7 +59,7 @@ namespace Son_Depremler.Siniflar
             _sonZaman = sonZaman;
 
             if (_ilkZaman != _sonZaman)
-                _bilgilendirme.SonDeprem(lvListe);
+                _bilgilendir.SonDeprem(lvListe);
         }
     }
 }

@@ -1,26 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Son_Depremler.Siniflar.Baglanti">
-    <Position X="0.75" Y="2" Width="1.5" />
+    <Position X="0.5" Y="3" Width="1.5" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
-    <NestedTypes>
-      <Enum Name="Son_Depremler.Siniflar.Baglanti.InternetConnectionStateFlags" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Siniflar\Baglanti.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Enum>
-    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>DAAAAAAAEAABAAAAACAAAAAAAAgAAAAAAEAAAAAAAAA=</HashCode>
+      <HashCode>CAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Siniflar\Baglanti.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Son_Depremler.Siniflar.Depremler">
-    <Position X="2.5" Y="2" Width="1.5" />
+    <Position X="2.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAACAAAAAADAAAIAIAABAAAAAAAAAIABEAAABASAAA=</HashCode>
+      <HashCode>AAAACAAAAAACAAAIAAAABAAAAAAAAAIAQEAAAAAAAAA=</HashCode>
       <FileName>Siniflar\Depremler.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -34,8 +27,22 @@
   <Class Name="Son_Depremler.Siniflar.FormAraclari">
     <Position X="2.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>QCEAAAAAAAAADAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Siniflar\FormAraclari.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Son_Depremler.Siniflar.Internet">
+    <Position X="0.5" Y="1" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Son_Depremler.Siniflar.Internet.InternetConnectionStateFlags" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Siniflar\Internet.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Siniflar\Internet.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9.13" />

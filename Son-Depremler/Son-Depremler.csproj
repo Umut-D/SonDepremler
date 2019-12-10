@@ -60,10 +60,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Siniflar\Baglanti.cs" />
-    <Compile Include="Siniflar\Bilgilendirme.cs" />
+    <Compile Include="Siniflar\Bilgilendir.cs" />
     <Compile Include="Siniflar\Depremler.cs" />
     <Compile Include="Siniflar\FormAraclari.cs" />
     <Compile Include="Siniflar\Harita.cs" />
+    <Compile Include="Siniflar\Internet.cs" />
     <EmbeddedResource Include="FrmSonDepremler.resx">
       <DependentUpon>FrmSonDepremler.cs</DependentUpon>
     </EmbeddedResource>
@@ -77,6 +78,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -93,6 +95,7 @@
     <None Include="Resources\yenile.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\tone-beep.wav" />
     <Content Include="son-depremler-icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

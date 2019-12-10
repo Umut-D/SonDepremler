@@ -9,29 +9,32 @@ namespace Son_Depremler
         public FrmSonDepremler()
         {
             InitializeComponent();
+            FormAraclari = new FormAraclari(this);
         }
 
-        readonly Depremler _depremler = new Depremler();
-        readonly Bilgilendirme _bilgilendirme = new Bilgilendirme();
+        private readonly Depremler _depremler = new Depremler();
+        private readonly Bilgilendir _bilgilendir = new Bilgilendir();
+        private FormAraclari FormAraclari { get; }
 
-        private void FrmSonDepremler_Load(object sender, EventArgs e)
+        public void FrmSonDepremler_Load(object sender, EventArgs e)
         {
             ListeleVeBilgilendir();
+            FormAraclari.Dakika();
+            FormAraclari.Ses();
         }
 
         private void ListView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listView.SelectedItems.Count > 0)
-            {
-                ListViewItem lviSeciliNesne = listView.SelectedItems[0];
+            if (listView.SelectedItems.Count <= 0)
+                return;
 
-                // Enlem ve boylam değerlerini alıp Harita sınıfına yolla
-                string enlem = lviSeciliNesne.SubItems[1].Text;
-                string boylam = lviSeciliNesne.SubItems[2].Text;
+            ListViewItem lviSeciliNesne = listView.SelectedItems[0];
 
-                Harita harita = new Harita(enlem, boylam);
-                harita.Ac();
-            }
+            string enlem = lviSeciliNesne.SubItems[1].Text;
+            string boylam = lviSeciliNesne.SubItems[2].Text;
+
+            Harita harita = new Harita(enlem, boylam);
+            harita.Ac();
         }
 
         private void BtnYenile_Click(object sender, EventArgs e)
@@ -51,20 +54,14 @@ namespace Son_Depremler
 
         private void TsmiHakkinda_Click(object sender, EventArgs e)
         {
-            _bilgilendirme.Hakkinda();
+            _bilgilendir.Hakkinda();
         }
 
-        // Liste görünümünde sütunların kullanıcı tarafından değiştirilmesini engelle
         private void ListView_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
         {
+            // Liste görünümünde sütunların kullanıcı tarafından değiştirilmesini engelle
             e.Cancel = true;
             e.NewWidth = listView.Columns[e.ColumnIndex].Width;
-        }
-
-        private void ListeleVeBilgilendir()
-        {
-            _depremler.Listele(listView, zamanlayici);
-            tsslDurum.Text = _bilgilendirme.SonGuncelleme();
         }
 
         private void FrmSonDepremler_Resize(object sender, EventArgs e)
@@ -99,9 +96,50 @@ namespace Son_Depremler
             WindowState = FormWindowState.Normal;
         }
 
+        private void Tsmi1Dakika_Click(object sender, EventArgs e)
+        {
+            FormAraclari.Ayarla(1, "Dakika");
+        }
+
+        private void Tsmi5Dakika_Click(object sender, EventArgs e)
+        {
+            FormAraclari.Ayarla(5, "Dakika");
+        }
+
+        private void Tsmi10Dakika_Click(object sender, EventArgs e)
+        {
+            FormAraclari.Ayarla(10, "Dakika");
+        }
+
+        private void Tsmi15Dakika_Click(object sender, EventArgs e)
+        {
+            FormAraclari.Ayarla(15, "Dakika");
+        }
+
+        private void Tsmi30Dakika_Click(object sender, EventArgs e)
+        {
+            FormAraclari.Ayarla(30, "Dakika");
+        }
+
         private void CmsKapat_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void TsmiAcik_Click(object sender, EventArgs e)
+        {
+            FormAraclari.Ayarla(true, "Ses");
+        }
+
+        private void TsmiKapali_Click(object sender, EventArgs e)
+        {
+            FormAraclari.Ayarla(false, "Ses");
+        }
+
+        private void ListeleVeBilgilendir()
+        {
+            _depremler.Listele(listView, zamanlayici);
+            tsslDurum.Text = _bilgilendir.SonGuncelleme();
         }
     }
 }
