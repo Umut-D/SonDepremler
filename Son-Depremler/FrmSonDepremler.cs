@@ -21,6 +21,7 @@ namespace Son_Depremler
             ListeleVeBilgilendir();
             FormAraclari.Dakika();
             FormAraclari.Ses();
+            FormAraclari.DepremSayisi();
         }
 
         private void ListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -96,6 +97,31 @@ namespace Son_Depremler
             WindowState = FormWindowState.Normal;
         }
 
+        private void Tsmi20Deprem_Click(object sender, EventArgs e)
+        {
+            FormAraclari.Ayarla(20, "DepremSayi");
+        }
+
+        private void Tsmi50Deprem_Click(object sender, EventArgs e)
+        {
+            FormAraclari.Ayarla(50, "DepremSayi");
+        }
+
+        private void Tsmi100Deprem_Click(object sender, EventArgs e)
+        {
+            FormAraclari.Ayarla(100, "DepremSayi");
+        }
+
+        private void Tsmi150Deprem_Click(object sender, EventArgs e)
+        {
+            FormAraclari.Ayarla(150, "DepremSayi");
+        }
+
+        private void Tsmi200Deprem_Click(object sender, EventArgs e)
+        {
+            FormAraclari.Ayarla(200, "DepremSayi");
+        }
+
         private void Tsmi1Dakika_Click(object sender, EventArgs e)
         {
             FormAraclari.Ayarla(1, "Dakika");
@@ -121,11 +147,6 @@ namespace Son_Depremler
             FormAraclari.Ayarla(30, "Dakika");
         }
 
-        private void CmsKapat_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void TsmiAcik_Click(object sender, EventArgs e)
         {
             FormAraclari.Ayarla(true, "Ses");
@@ -134,6 +155,11 @@ namespace Son_Depremler
         private void TsmiKapali_Click(object sender, EventArgs e)
         {
             FormAraclari.Ayarla(false, "Ses");
+        }
+
+        private void CmsKapat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         private void ListeleVeBilgilendir()

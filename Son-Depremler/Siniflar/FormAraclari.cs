@@ -113,6 +113,32 @@ namespace Son_Depremler.Siniflar
             }
         }
 
+        public void DepremSayisi()
+        {
+            foreach (ToolStripMenuItem nesne in _frmSonDepremler.tsmiDepremSayisi.DropDownItems)
+                nesne.Checked = false;
+
+            int depremSayi = (int) Settings.Default["DepremSayi"];
+            switch (depremSayi)
+            {
+                case 20:
+                    _frmSonDepremler.tsmi20Deprem.Checked = true;
+                    break;
+                case 50:
+                    _frmSonDepremler.tsmi50Deprem.Checked = true;
+                    break;
+                case 100:
+                    _frmSonDepremler.tsmi100Deprem.Checked = true;
+                    break;
+                case 150:
+                    _frmSonDepremler.tsmi150Deprem.Checked = true;
+                    break;
+                case 200:
+                    _frmSonDepremler.tsmi200Deprem.Checked = true;
+                    break;
+            }
+        }
+
         // Gelen tip değerine ilgili ayarı (Dakika-Ses) kaydet
         public void Ayarla<T>(T deger, string ayarAdi)
         {

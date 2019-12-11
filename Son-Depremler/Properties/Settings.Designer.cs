@@ -46,5 +46,17 @@ namespace Son_Depremler.Properties {
                 this["Ses"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("25")]
+        public int DepremSayi {
+            get {
+                return ((int)(this["DepremSayi"]));
+            }
+            set {
+                this["DepremSayi"] = value;
+            }
+        }
     }
 }

@@ -16,13 +16,13 @@ namespace Son_Depremler.Siniflar
         private readonly Bilgilendir _bilgilendir = new Bilgilendir();
 
         // İndirilen sayfayı ayrıştır ve listeye taşı
-        private void ListeOlustur(ListView lvListe)
+        private void ListeOlustur(ListView lvListe, int depremSayisi)
         {
             lvListe.Items.Clear();
             Baglanti.VeriAl();
 
             List<string> satirlar = new List<string>(File.ReadAllLines(Environment.CurrentDirectory + "//depremler", Encoding.UTF8));
-            for (int j = 7; j < 27; j++)
+            for (int j = 7; j < depremSayisi; j++)
             {
                 List<string> dizi = new List<string>(Regex.Split(satirlar[j], @"[ \t]{2,}"));
 
@@ -44,11 +44,13 @@ namespace Son_Depremler.Siniflar
 
         public void Listele(ListView lvListe, Timer zamanlayici)
         {
-            ListeOlustur(lvListe);
-
-            int dakika = (int)Settings.Default["Dakika"];
-
+            // Web sitesinden çekilen verideki deprem bilgileri 7. satırdan başlıyor
+            int depremSayi = (int) Settings.Default["DepremSayi"] + 7;
+            ListeOlustur(lvListe, depremSayi);
+            
             _sonZaman = lvListe.Items[0].Text;
+
+            int dakika = (int) Settings.Default["Dakika"];
             _formAraclari.TimerSifirla(zamanlayici, dakika);
         }
 

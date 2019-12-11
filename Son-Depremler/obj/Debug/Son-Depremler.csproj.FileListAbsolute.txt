@@ -8,3 +8,17 @@ C:\Users\Zeta\AppData\Local\Temporary Projects\Son-Depremler\obj\Debug\Son-Depre
 C:\Users\Zeta\AppData\Local\Temporary Projects\Son-Depremler\obj\Debug\Son-Depremler.pdb
 D:\Belgelerim\Programlar\C#\Son-Depremler\Son-Depremler\obj\Debug\Son_Depremler.FrmSonDepremler.resources
 D:\Belgelerim\Programlar\C#\Son-Depremler\Son-Depremler\obj\Debug\Son-Depremler.csproj.GenerateResource.cache
+D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\bin\Debug\Son Depremler.exe.config
+D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\bin\Debug\Son Depremler.exe
+D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\bin\Debug\Son Depremler.pdb
+D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\bin\Debug\HtmlAgilityPack.dll
+D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\bin\Debug\HtmlAgilityPack.pdb
+D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\bin\Debug\HtmlAgilityPack.xml
+D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Debug\Son-Depremler.csprojAssemblyReference.cache
+D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Debug\Son_Depremler.FrmSonDepremler.resources
+D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Debug\Son_Depremler.Properties.Resources.resources
+D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Debug\Son-Depremler.csproj.GenerateResource.cache
+D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Debug\Son-Depremler.csproj.CoreCompileInputs.cache
+D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Debug\Son-Depremler.csproj.CopyComplete
+D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Debug\Son Depremler.exe
+D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Debug\Son Depremler.pdb
