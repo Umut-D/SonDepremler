@@ -48,7 +48,7 @@ namespace Son_Depremler.Siniflar
         public static void Guncelle()
         {
             const string versiyonAdres = @"https://raw.githubusercontent.com/Umut-D/umutd.com/master/assets/program-versions/son-depremler.xml";
-            string guncelVersiyon = "1.05"; // TODO Her yeni versiyonda bu alan ve sunucudaki XML dosyası güncellecek
+            const string guncelVersiyon = "1.06"; // TODO Her yeni versiyonda bu alan ve sunucudaki XML dosyası güncellecek
 
             try
             {

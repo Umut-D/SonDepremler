@@ -45,7 +45,7 @@ namespace Son_Depremler.Siniflar
 
         public void Hakkinda()
         {
-            MessageBox.Show(@"Bu program ile; Boğaziçi Üniversitesi, Kandilli Rasathanesi ve Deprem Araştırma Enstitüsü (KRDAE) aracılığıyla sağlanan (son 20) deprem verilerini istediniz zaman aralıklarında görebilirsiniz." + Environment.NewLine + Environment.NewLine + @"Ayrıca, ilgili deprem(ler)e tıklayarak mevcut tarayıcınızda depremin olduğu yeri Google Haritalar sayfasında görüntüleyebilirsiniz.", @"Hakkında", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(@"Bu program ile; Boğaziçi Üniversitesi, Kandilli Rasathanesi ve Deprem Araştırma Enstitüsü (KRDAE) aracılığıyla sağlanan deprem verilerini istediniz zaman aralıklarında görebilirsiniz." + Environment.NewLine + Environment.NewLine + @"Ayrıca, ilgili deprem(ler)e tıklayarak mevcut tarayıcınızda depremin olduğu yeri Google Haritalar sayfasında görüntüleyebilirsiniz.", @"Hakkında", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
