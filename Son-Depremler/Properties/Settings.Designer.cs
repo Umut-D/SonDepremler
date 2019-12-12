@@ -49,7 +49,7 @@ namespace Son_Depremler.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("25")]
+        [global::System.Configuration.DefaultSettingValueAttribute("20")]
         public int DepremSayi {
             get {
                 return ((int)(this["DepremSayi"]));
