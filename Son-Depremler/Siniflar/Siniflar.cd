@@ -11,23 +11,23 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Son_Depremler.Siniflar.Depremler">
-    <Position X="2.5" Y="3.25" Width="1.5" />
+    <Position X="4.5" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAACAAAAAACAAAIAAAABAAAAAAAAAIAQEAAAAAAAAA=</HashCode>
       <FileName>Siniflar\Depremler.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Son_Depremler.Siniflar.Harita">
-    <Position X="4.25" Y="2" Width="1.5" />
+    <Position X="6.25" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAACAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
       <FileName>Siniflar\Harita.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Son_Depremler.Siniflar.FormAraclari">
-    <Position X="2.5" Y="0.5" Width="1.5" />
+    <Position X="2.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QCEAAAAAAAAADAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>QCEAAAAAAAAADAAAACAAAEAAAAAAAAAQAAAAAAAAAAA=</HashCode>
       <FileName>Siniflar\FormAraclari.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -43,6 +43,32 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Siniflar\Internet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Son_Depremler.Siniflar.Sabitler">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Son_Depremler.Siniflar.Sabitler.GuncellemeAraligi" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Siniflar\Sabitler.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Son_Depremler.Siniflar.Sabitler.GosterimSayisi" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Siniflar\Sabitler.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Siniflar\Sabitler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Son_Depremler.Siniflar.Bilgilendir">
+    <Position X="8" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAQAAAAAAAAAAAAAAAAEAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Siniflar\Bilgilendir.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9.13" />

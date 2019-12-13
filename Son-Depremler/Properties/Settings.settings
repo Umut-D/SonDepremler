@@ -6,7 +6,7 @@
       <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="Ses" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="DepremSayi" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">20</Value>

@@ -47,15 +47,13 @@ namespace Son_Depremler.Siniflar
 
         public static void Guncelle()
         {
-            const string versiyonAdres = @"https://raw.githubusercontent.com/Umut-D/umutd.com/master/assets/program-versions/son-depremler.xml";
-            const string guncelVersiyon = "1.06"; // TODO Her yeni versiyonda bu alan ve sunucudaki XML dosyası güncellecek
-
             try
             {
                 // Web sitesine RSS okuyucu olarak istem yapmak gerek. Yoksa istek reddedilmekte
                 WebClient webIstemcisi = new WebClient();
                 webIstemcisi.Headers.Add("user-agent", "MyRSSReader/1.0");
 
+                const string versiyonAdres = @"https://raw.githubusercontent.com/Umut-D/umutd.com/master/assets/program-versions/son-depremler.xml";
                 XmlReader xmlOku = XmlReader.Create(webIstemcisi.OpenRead(versiyonAdres) ?? throw new InvalidOperationException());
                 while (xmlOku.Read())
                 {
@@ -65,6 +63,8 @@ namespace Son_Depremler.Siniflar
 
                     string sunucudakiVersiyon = xmlOku.GetAttribute("version");
 
+                    // ToDo Her yeni versiyonda bu alan ve sunucudaki XML dosyası güncellecek
+                    const string guncelVersiyon = "1.07";
                     if (sunucudakiVersiyon == guncelVersiyon)
                     {
                         MessageBox.Show(@"Program günceldir. Yeni versiyon çıkana kadar şimdilik en iyisi bu.", @"Güncelle", MessageBoxButtons.OK, MessageBoxIcon.Information);

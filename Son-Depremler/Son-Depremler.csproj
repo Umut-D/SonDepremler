@@ -28,7 +28,7 @@
     <PublisherName>Umut D.</PublisherName>
     <SuiteName>Son-Depremler</SuiteName>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.6.%2a</ApplicationVersion>
+    <ApplicationVersion>1.0.7.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -43,7 +43,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -85,6 +85,7 @@
     <Compile Include="Siniflar\FormAraclari.cs" />
     <Compile Include="Siniflar\Harita.cs" />
     <Compile Include="Siniflar\Internet.cs" />
+    <Compile Include="Siniflar\Sabitler.cs" />
     <EmbeddedResource Include="FrmSonDepremler.resx">
       <DependentUpon>FrmSonDepremler.cs</DependentUpon>
     </EmbeddedResource>

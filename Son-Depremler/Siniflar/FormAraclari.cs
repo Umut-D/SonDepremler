@@ -4,10 +4,12 @@ using System.IO;
 using System.Media;
 using System.Windows.Forms;
 using Son_Depremler.Properties;
+using static Son_Depremler.Siniflar.Sabitler.GuncellemeAraligi;
+using static Son_Depremler.Siniflar.Sabitler.GosterimSayisi;
 
 namespace Son_Depremler.Siniflar
 {
-    public class FormAraclari
+    public class FormAraclari : Sabitler
     {
         private readonly FrmSonDepremler _frmSonDepremler;
 
@@ -61,28 +63,62 @@ namespace Son_Depremler.Siniflar
             zamanlayici.Interval = 1000 * 60 * dakika;
         }
 
+        // Gelen tip değerine ilgili ayarı (Dakika-Ses) kaydet
+        public void Ayarla<T>(T deger, string ayarAdi)
+        {
+            Settings.Default[ayarAdi] = deger;
+            Settings.Default.Save();
+            _frmSonDepremler.FrmSonDepremler_Load(this, null);
+        }
+
         public void Dakika()
         {
             foreach (ToolStripMenuItem nesne in _frmSonDepremler.tsmiGuncellemeSikligi.DropDownItems)
                 nesne.Checked = false;
 
-            int dakika = (int) Settings.Default["Dakika"];
-            switch (dakika)
+            GuncellemeAraligi guncellemeAraligi = (GuncellemeAraligi) Settings.Default["Dakika"];
+            switch (guncellemeAraligi)
             {
-                case 1:
+                case Bir:
                     _frmSonDepremler.tsmi1Dakika.Checked = true;
                     break;
-                case 5:
+                case Bes:
                     _frmSonDepremler.tsmi5Dakika.Checked = true;
                     break;
-                case 10:
+                case On:
                     _frmSonDepremler.tsmi10Dakika.Checked = true;
                     break;
-                case 15:
+                case OnBes:
                     _frmSonDepremler.tsmi15Dakika.Checked = true;
                     break;
-                case 30:
+                case Otuz:
                     _frmSonDepremler.tsmi30Dakika.Checked = true;
+                    break;
+            }
+        }
+
+        public void DepremSayisi()
+        {
+            foreach (ToolStripMenuItem nesne in _frmSonDepremler.tsmiDepremSayisi.DropDownItems)
+                nesne.Checked = false;
+
+            GosterimSayisi gosterimSayisi = (GosterimSayisi) Settings.Default["DepremSayi"];
+            switch (gosterimSayisi)
+            {
+                case Yirmi:
+                    _frmSonDepremler.tsmi20Deprem.Checked = true;
+                    break;
+                case Elli:
+                    _frmSonDepremler.tsmi50Deprem.Checked = true;
+                    break;
+                case Yuz:
+                    _frmSonDepremler.tsmi100Deprem.Checked = true;
+                    break;
+                case YuzElli:
+                    _frmSonDepremler.tsmi150Deprem.Checked = true;
+                    break;
+                case IkiYuz:
+                    _frmSonDepremler.tsmi200Deprem.Checked = true;
                     break;
             }
         }
@@ -111,40 +147,6 @@ namespace Son_Depremler.Siniflar
             {
                 MessageBox.Show(@"Ses sorunu yaşandı. Ses kartınızla ilgili bir sorun olabilir. Şöyle bir hata mevcut; " + Environment.NewLine + sesHata.Message, @"Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        public void DepremSayisi()
-        {
-            foreach (ToolStripMenuItem nesne in _frmSonDepremler.tsmiDepremSayisi.DropDownItems)
-                nesne.Checked = false;
-
-            int depremSayi = (int) Settings.Default["DepremSayi"];
-            switch (depremSayi)
-            {
-                case 20:
-                    _frmSonDepremler.tsmi20Deprem.Checked = true;
-                    break;
-                case 50:
-                    _frmSonDepremler.tsmi50Deprem.Checked = true;
-                    break;
-                case 100:
-                    _frmSonDepremler.tsmi100Deprem.Checked = true;
-                    break;
-                case 150:
-                    _frmSonDepremler.tsmi150Deprem.Checked = true;
-                    break;
-                case 200:
-                    _frmSonDepremler.tsmi200Deprem.Checked = true;
-                    break;
-            }
-        }
-
-        // Gelen tip değerine ilgili ayarı (Dakika-Ses) kaydet
-        public void Ayarla<T>(T deger, string ayarAdi)
-        {
-            Settings.Default[ayarAdi] = deger;
-            Settings.Default.Save();
-            _frmSonDepremler.FrmSonDepremler_Load(this, null);
         }
     }
 }
