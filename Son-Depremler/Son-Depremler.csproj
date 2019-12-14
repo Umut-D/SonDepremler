@@ -28,7 +28,7 @@
     <PublisherName>Umut D.</PublisherName>
     <SuiteName>Son-Depremler</SuiteName>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.7.%2a</ApplicationVersion>
+    <ApplicationVersion>1.0.8.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -79,13 +79,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Siniflar\Baglanti.cs" />
-    <Compile Include="Siniflar\Bilgilendir.cs" />
+    <Compile Include="Siniflar\Baglanti\Baglanti.cs" />
+    <Compile Include="Siniflar\Bildirimler.cs" />
     <Compile Include="Siniflar\Depremler.cs" />
-    <Compile Include="Siniflar\FormAraclari.cs" />
+    <Compile Include="Siniflar\Form\Araclar.cs" />
     <Compile Include="Siniflar\Harita.cs" />
-    <Compile Include="Siniflar\Internet.cs" />
-    <Compile Include="Siniflar\Sabitler.cs" />
+    <Compile Include="Siniflar\Baglanti\Internet.cs" />
+    <Compile Include="Siniflar\Form\Sabitler.cs" />
     <EmbeddedResource Include="FrmSonDepremler.resx">
       <DependentUpon>FrmSonDepremler.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,7 +110,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Siniflar\Siniflar.cd" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\yenile.png" />
@@ -126,6 +125,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

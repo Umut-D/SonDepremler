@@ -2,12 +2,13 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Son_Depremler.Properties;
+using Son_Depremler.Siniflar.Form;
 
 namespace Son_Depremler.Siniflar
 {
-    class Bilgilendir
+    class Bildirimler
     {
-        private readonly FormAraclari _formAraclari = new FormAraclari(null);
+        private readonly Araclar _araclar = new Araclar(null);
 
         // Son depremi gösteren bilgi ekranını aktif et
         public void SonDeprem(ListView lvListe)
@@ -19,18 +20,18 @@ namespace Son_Depremler.Siniflar
             bool sesDurum = (bool) Settings.Default["Ses"];
             if (sesDurum)
             {
-                _formAraclari.SesCal();
+                _araclar.SesCal();
             }
 
-            NotifyIcon bilgilendirmeMesaji = new NotifyIcon
+            NotifyIcon bildirim = new NotifyIcon
             {
                 Visible = true,
                 Icon = SystemIcons.Information,
                 BalloonTipTitle = @"Son Deprem", BalloonTipText = @"Saat: " + zaman + Environment.NewLine + @"Yer: " + yer + Environment.NewLine + @"Büyüklük: " + buyukluk
             };
 
-            bilgilendirmeMesaji.ShowBalloonTip(7000);
-            bilgilendirmeMesaji.Dispose();
+            bildirim.ShowBalloonTip(7000);
+            bildirim.Dispose();
         }
 
         public string SonGuncelleme()
@@ -38,7 +39,7 @@ namespace Son_Depremler.Siniflar
             int dakika = (int) Settings.Default["Dakika"];
 
             DateTime tarih = DateTime.Now;
-            string yazi = "Son Güncelleme: " + tarih.ToLongTimeString() + " (Sonraki otomatik güncelleme: " + tarih.AddMinutes(dakika).ToLongTimeString() + ")";
+            string yazi = "Son Güncelleme: " + tarih.ToLongTimeString() + " (Bir sonraki güncelleme: " + tarih.AddMinutes(dakika).ToLongTimeString() + ")";
 
             return yazi;
         }

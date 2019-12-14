@@ -14,7 +14,6 @@ D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\bin\Debug\Son D
 D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\bin\Debug\HtmlAgilityPack.dll
 D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\bin\Debug\HtmlAgilityPack.pdb
 D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\bin\Debug\HtmlAgilityPack.xml
-D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Debug\Son-Depremler.csprojAssemblyReference.cache
 D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Debug\Son_Depremler.FrmSonDepremler.resources
 D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Debug\Son_Depremler.Properties.Resources.resources
 D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Debug\Son-Depremler.csproj.GenerateResource.cache

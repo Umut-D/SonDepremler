@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Son_Depremler.Siniflar;
+using Son_Depremler.Siniflar.Form;
 
 namespace Son_Depremler
 {
@@ -9,19 +10,19 @@ namespace Son_Depremler
         public FrmSonDepremler()
         {
             InitializeComponent();
-            FormAraclari = new FormAraclari(this);
+            Araclar = new Araclar(this);
         }
 
         private readonly Depremler _depremler = new Depremler();
-        private readonly Bilgilendir _bilgilendir = new Bilgilendir();
-        private FormAraclari FormAraclari { get; }
+        private readonly Bildirimler _bilgilendir = new Bildirimler();
+        private Araclar Araclar { get; }
 
         public void FrmSonDepremler_Load(object sender, EventArgs e)
         {
             ListeleVeBilgilendir();
-            FormAraclari.Dakika();
-            FormAraclari.Ses();
-            FormAraclari.DepremSayisi();
+            Araclar.Dakika();
+            Araclar.Ses();
+            Araclar.DepremSayisi();
         }
 
         private void ListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -50,7 +51,7 @@ namespace Son_Depremler
 
         private void TsmiGuncelle_Click(object sender, EventArgs e)
         {
-            Baglanti.Guncelle();
+            Siniflar.Baglanti.Baglanti.Guncelle();
         }
 
         private void TsmiHakkinda_Click(object sender, EventArgs e)
@@ -99,62 +100,62 @@ namespace Son_Depremler
 
         private void Tsmi20Deprem_Click(object sender, EventArgs e)
         {
-            FormAraclari.Ayarla(20, "DepremSayi");
+            Araclar.Ayarla(20, "DepremSayi");
         }
 
         private void Tsmi50Deprem_Click(object sender, EventArgs e)
         {
-            FormAraclari.Ayarla(50, "DepremSayi");
+            Araclar.Ayarla(50, "DepremSayi");
         }
 
         private void Tsmi100Deprem_Click(object sender, EventArgs e)
         {
-            FormAraclari.Ayarla(100, "DepremSayi");
+            Araclar.Ayarla(100, "DepremSayi");
         }
 
         private void Tsmi150Deprem_Click(object sender, EventArgs e)
         {
-            FormAraclari.Ayarla(150, "DepremSayi");
+            Araclar.Ayarla(150, "DepremSayi");
         }
 
         private void Tsmi200Deprem_Click(object sender, EventArgs e)
         {
-            FormAraclari.Ayarla(200, "DepremSayi");
+            Araclar.Ayarla(200, "DepremSayi");
         }
 
         private void Tsmi1Dakika_Click(object sender, EventArgs e)
         {
-            FormAraclari.Ayarla(1, "Dakika");
+            Araclar.Ayarla(1, "Dakika");
         }
 
         private void Tsmi5Dakika_Click(object sender, EventArgs e)
         {
-            FormAraclari.Ayarla(5, "Dakika");
+            Araclar.Ayarla(5, "Dakika");
         }
 
         private void Tsmi10Dakika_Click(object sender, EventArgs e)
         {
-            FormAraclari.Ayarla(10, "Dakika");
+            Araclar.Ayarla(10, "Dakika");
         }
 
         private void Tsmi15Dakika_Click(object sender, EventArgs e)
         {
-            FormAraclari.Ayarla(15, "Dakika");
+            Araclar.Ayarla(15, "Dakika");
         }
 
         private void Tsmi30Dakika_Click(object sender, EventArgs e)
         {
-            FormAraclari.Ayarla(30, "Dakika");
+            Araclar.Ayarla(30, "Dakika");
         }
 
         private void TsmiAcik_Click(object sender, EventArgs e)
         {
-            FormAraclari.Ayarla(true, "Ses");
+            Araclar.Ayarla(true, "Ses");
         }
 
         private void TsmiKapali_Click(object sender, EventArgs e)
         {
-            FormAraclari.Ayarla(false, "Ses");
+            Araclar.Ayarla(false, "Ses");
         }
 
         private void CmsKapat_Click(object sender, EventArgs e)

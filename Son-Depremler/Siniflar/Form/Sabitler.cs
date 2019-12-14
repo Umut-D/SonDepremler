@@ -1,4 +1,4 @@
-﻿namespace Son_Depremler.Siniflar
+﻿namespace Son_Depremler.Siniflar.Form
 {
     public class Sabitler
     {

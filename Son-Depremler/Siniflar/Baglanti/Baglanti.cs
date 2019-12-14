@@ -8,7 +8,7 @@ using System.Xml;
 using HtmlAgilityPack;
 using HtmlDocument = HtmlAgilityPack.HtmlDocument;
 
-namespace Son_Depremler.Siniflar
+namespace Son_Depremler.Siniflar.Baglanti
 {
     public sealed class Baglanti : Internet
     {
@@ -21,21 +21,16 @@ namespace Son_Depremler.Siniflar
                 HtmlDocument htmlBelge = new HtmlDocument();
                 WebRequest webIstemi = WebRequest.Create(webAdres);
                 WebResponse webDonusDegeri = webIstemi.GetResponse();
-                StreamReader oku =
-                    new StreamReader(webDonusDegeri.GetResponseStream() ?? throw new InvalidOperationException());
+                StreamReader oku = new StreamReader(webDonusDegeri.GetResponseStream() ?? throw new InvalidOperationException());
 
                 // HtmlAgilityPack ile web sitesindeki 'ilgili düğümü' ayıklayıp çek
                 htmlBelge.Load(oku);
                 HtmlNodeCollection depremBilgileri = htmlBelge.DocumentNode.SelectNodes("/html/body/pre/text()[1]");
 
-                // Tüm deprem bilgilerini aktar
                 string degerler = string.Empty;
                 foreach (HtmlNode depremler in depremBilgileri)
-                {
                     degerler = depremler.OuterHtml;
-                }
 
-                // Dönen değerlerdeki deprem bilgilerini alıp yaz
                 File.WriteAllText(Environment.CurrentDirectory + "//depremler", degerler, Encoding.UTF8);
             }
             else
@@ -63,15 +58,17 @@ namespace Son_Depremler.Siniflar
 
                     string sunucudakiVersiyon = xmlOku.GetAttribute("version");
 
-                    // ToDo Her yeni versiyonda bu alan ve sunucudaki XML dosyası güncellecek
-                    const string guncelVersiyon = "1.07";
+                    // TODO Her yeni versiyonda bu alan ve sunucudaki XML dosyası güncellecek
+                    const string guncelVersiyon = "1.08";
                     if (sunucudakiVersiyon == guncelVersiyon)
                     {
-                        MessageBox.Show(@"Program günceldir. Yeni versiyon çıkana kadar şimdilik en iyisi bu.", @"Güncelle", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(@"Program güncel. Yeni versiyon çıkana kadar şimdilik en iyisi bu.", @"Güncelle", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        DialogResult guncelleDiyalog = MessageBox.Show(@"Yeni bir güncelleme var. Evet evet, programı " + sunucudakiVersiyon + @" versiyonuna yükselttim. Yenilikler var. Web sayfasına girip indirmek ister misiniz?", @"Güncelle", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                        DialogResult guncelleDiyalog = MessageBox.Show(@"Yeni bir güncelleme var. Evet evet, programı " + sunucudakiVersiyon +
+                            @" versiyonuna yükselttim. Yenilikler var. Web sayfasına girip indirmek ister misiniz?",
+                            @"Güncelle", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
                         if (guncelleDiyalog == DialogResult.OK)
                             Process.Start("http://www.umutd.com/programlar/son-depremler");
@@ -80,8 +77,7 @@ namespace Son_Depremler.Siniflar
             }
             catch (Exception)
             {
-                MessageBox.Show(@"Bağlantıda istenmeyen bir hata meydana geldi.", @"Hata", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                MessageBox.Show(@"Bağlantıda istenmeyen bir hata meydana geldi.", @"Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

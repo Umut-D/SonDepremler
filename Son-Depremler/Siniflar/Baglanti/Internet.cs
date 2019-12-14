@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace Son_Depremler.Siniflar
+namespace Son_Depremler.Siniflar.Baglanti
 {
     public abstract class Internet
     {

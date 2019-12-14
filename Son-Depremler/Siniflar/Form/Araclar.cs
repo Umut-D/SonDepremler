@@ -4,16 +4,16 @@ using System.IO;
 using System.Media;
 using System.Windows.Forms;
 using Son_Depremler.Properties;
-using static Son_Depremler.Siniflar.Sabitler.GuncellemeAraligi;
-using static Son_Depremler.Siniflar.Sabitler.GosterimSayisi;
+using static Son_Depremler.Siniflar.Form.Sabitler.GuncellemeAraligi;
+using static Son_Depremler.Siniflar.Form.Sabitler.GosterimSayisi;
 
-namespace Son_Depremler.Siniflar
+namespace Son_Depremler.Siniflar.Form
 {
-    public class FormAraclari : Sabitler
+    public class Araclar : Sabitler
     {
         private readonly FrmSonDepremler _frmSonDepremler;
 
-        public FormAraclari(FrmSonDepremler frmSonDepremler)
+        public Araclar(FrmSonDepremler frmSonDepremler)
         {
             _frmSonDepremler = frmSonDepremler;
         }
