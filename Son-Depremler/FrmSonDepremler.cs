@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Son_Depremler.Siniflar;
+using Son_Depremler.Siniflar.Baglanti;
 using Son_Depremler.Siniflar.Form;
 
 namespace Son_Depremler
@@ -51,7 +52,8 @@ namespace Son_Depremler
 
         private void TsmiGuncelle_Click(object sender, EventArgs e)
         {
-            Siniflar.Baglanti.Baglanti.Guncelle();
+            Guncelle guncelle = new Guncelle();
+            guncelle.VersiyonKontrol();
         }
 
         private void TsmiHakkinda_Click(object sender, EventArgs e)

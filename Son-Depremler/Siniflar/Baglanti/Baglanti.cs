@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Text;
 using System.Windows.Forms;
-using System.Xml;
 using HtmlAgilityPack;
 using HtmlDocument = HtmlAgilityPack.HtmlDocument;
 
@@ -14,71 +12,39 @@ namespace Son_Depremler.Siniflar.Baglanti
     {
         public static void VeriAl()
         {
-            const string webAdres = @"http://www.koeri.boun.edu.tr/scripts/lst7.asp";
-
-            if (Kontrol())
+            if (NetKontrol())
             {
-                HtmlDocument htmlBelge = new HtmlDocument();
-                WebRequest webIstemi = WebRequest.Create(webAdres);
-                WebResponse webDonusDegeri = webIstemi.GetResponse();
-                StreamReader oku = new StreamReader(webDonusDegeri.GetResponseStream() ?? throw new InvalidOperationException());
-
-                // HtmlAgilityPack ile web sitesindeki 'ilgili düğümü' ayıklayıp çek
-                htmlBelge.Load(oku);
-                HtmlNodeCollection depremBilgileri = htmlBelge.DocumentNode.SelectNodes("/html/body/pre/text()[1]");
-
-                string degerler = string.Empty;
-                foreach (HtmlNode depremler in depremBilgileri)
-                    degerler = depremler.OuterHtml;
-
-                File.WriteAllText(Environment.CurrentDirectory + "//depremler", degerler, Encoding.UTF8);
+                HtmlDocument htmlBelge = BelgeOku();
+                BilgileriOkuVeYaz(htmlBelge);
             }
             else
             {
-                MessageBox.Show(@"Maalesef internet bağlantınız yok.", @"Hata", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                MessageBox.Show(@"Maalesef internet bağlantınız yok.", @"Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        public static void Guncelle()
+        private static HtmlDocument BelgeOku()
         {
-            try
-            {
-                // Web sitesine RSS okuyucu olarak istem yapmak gerek. Yoksa istek reddedilmekte
-                WebClient webIstemcisi = new WebClient();
-                webIstemcisi.Headers.Add("user-agent", "MyRSSReader/1.0");
+            string webAdres = @"http://www.koeri.boun.edu.tr/scripts/lst7.asp";
+            WebRequest webIstemi = WebRequest.Create(webAdres);
+            WebResponse webDonusDegeri = webIstemi.GetResponse();
+            StreamReader oku = new StreamReader(webDonusDegeri.GetResponseStream() ?? throw new InvalidOperationException());
 
-                const string versiyonAdres = @"https://raw.githubusercontent.com/Umut-D/umutd.com/master/assets/program-versions/son-depremler.xml";
-                XmlReader xmlOku = XmlReader.Create(webIstemcisi.OpenRead(versiyonAdres) ?? throw new InvalidOperationException());
-                while (xmlOku.Read())
-                {
-                    // XML dosyasında eksi ile baslayan alan bulunmazsa okuma yapma
-                    if (xmlOku.NodeType != XmlNodeType.Element || xmlOku.Name != "depremler" || !xmlOku.HasAttributes)
-                        continue;
+            HtmlDocument htmlBelge = new HtmlDocument();
+            htmlBelge.Load(oku);
 
-                    string sunucudakiVersiyon = xmlOku.GetAttribute("version");
+            return htmlBelge;
+        }
 
-                    // TODO Her yeni versiyonda bu alan ve sunucudaki XML dosyası güncellecek
-                    const string guncelVersiyon = "1.08";
-                    if (sunucudakiVersiyon == guncelVersiyon)
-                    {
-                        MessageBox.Show(@"Program güncel. Yeni versiyon çıkana kadar şimdilik en iyisi bu.", @"Güncelle", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        DialogResult guncelleDiyalog = MessageBox.Show(@"Yeni bir güncelleme var. Evet evet, programı " + sunucudakiVersiyon +
-                            @" versiyonuna yükselttim. Yenilikler var. Web sayfasına girip indirmek ister misiniz?",
-                            @"Güncelle", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+        private static void BilgileriOkuVeYaz(HtmlDocument htmlBelge)
+        {
+            HtmlNodeCollection depremBilgileri = htmlBelge.DocumentNode.SelectNodes("/html/body/pre/text()[1]");
 
-                        if (guncelleDiyalog == DialogResult.OK)
-                            Process.Start("http://www.umutd.com/programlar/son-depremler");
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show(@"Bağlantıda istenmeyen bir hata meydana geldi.", @"Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            string degerler = string.Empty;
+            foreach (HtmlNode depremler in depremBilgileri)
+                degerler = depremler.OuterHtml;
+
+            File.WriteAllText(Environment.CurrentDirectory + "//depremler", degerler, Encoding.UTF8);
         }
     }
 }

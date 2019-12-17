@@ -6,7 +6,6 @@ namespace Son_Depremler.Siniflar.Baglanti
     public abstract class Internet
     {
         // İnternet bağlatısını kontrol etmek için wininet.dll'yi kullanıp işletim sistemi kaynaklarına eriş
-
         [DllImport("wininet.dll", CharSet = CharSet.Auto)]
         private static extern bool InternetGetConnectedState(ref InternetConnectionStateFlags lpdwFlags, int dwReserved);
 
@@ -21,7 +20,7 @@ namespace Son_Depremler.Siniflar.Baglanti
             INTERNET_CONNECTION_CONFIGURED = 0x40
         }
 
-        protected static bool Kontrol()
+        protected static bool NetKontrol()
         {
             InternetConnectionStateFlags flags = 0;
             bool durum = InternetGetConnectedState(ref flags, 0);

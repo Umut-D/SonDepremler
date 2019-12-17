@@ -35,4 +35,3 @@ D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Release\Son
 D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Release\Son-Depremler.csproj.CopyComplete
 D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Release\Son Depremler.exe
 D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Release\Son Depremler.pdb
-D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Release\Son-Depremler.csprojAssemblyReference.cache

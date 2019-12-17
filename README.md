@@ -1,6 +1,6 @@
 # Son-Depremler
 
-<img src="https://img.shields.io/badge/Versiyon-1.08-blueviolet.svg?style=flat" alt="Versiyon" /> <img src="https://img.shields.io/badge/Durum-Çalışıyor-success.svg?style=flat" alt="Durum" /> <img src="https://img.shields.io/badge/Lisans-MIT-blue.svg?style=flat" alt="Lisans" />
+<img src="https://img.shields.io/badge/Versiyon-1.09-blueviolet.svg?style=flat" alt="Versiyon" /> <img src="https://img.shields.io/badge/Durum-Çalışıyor-success.svg?style=flat" alt="Durum" /> <img src="https://img.shields.io/badge/Lisans-MIT-blue.svg?style=flat" alt="Lisans" />
 
 Boğaziçi Üniversitesi, Kandilli Rasathanesi ve Deprem Araştırma Enstitüsü (KRDAE) aracılığıyla sağlanan deprem verilerini kullanıcıya sunan program.
 
