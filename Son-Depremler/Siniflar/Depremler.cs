@@ -9,7 +9,7 @@ using Son_Depremler.Siniflar.Form;
 
 namespace Son_Depremler.Siniflar
 {
-    class Depremler
+    class Depremler : Deprem
     {
         private string _ilkZaman;
         private string _sonZaman;
@@ -38,16 +38,32 @@ namespace Son_Depremler.Siniflar
                 NesneleriOku(lvListe, satirlar, satir);
         }
 
-        private static void NesneleriOku(ListView lvListe, List<string> satirlar, int satir)
+        private void NesneleriOku(ListView lvListe, List<string> satirlar, int satir)
         {
             List<string> dizi = new List<string>(Regex.Split(satirlar[satir], @"[ \t]{2,}"));
+            Deprem(dizi);
 
-            ListViewItem lviNesnesi = new ListViewItem(dizi[0]); // Tarih
-            lviNesnesi.SubItems.Add(dizi[1]); // Enlem
-            lviNesnesi.SubItems.Add(dizi[2]); // Boylam
-            lviNesnesi.SubItems.Add(dizi[3]); // Derinlik
-            lviNesnesi.SubItems.Add(dizi[5]); // Şiddet
-            lviNesnesi.SubItems.Add(dizi[7]); // Yer
+            LviNesnesineEkle(lvListe);
+        }
+
+        private void Deprem(List<string> dizi)
+        {
+            Tarih = dizi[0];
+            Enlem = dizi[1];
+            Boylam = dizi[2];
+            Derinlik = dizi[3];
+            Siddet = dizi[5];
+            Yer = dizi[7];
+        }
+
+        private void LviNesnesineEkle(ListView lvListe)
+        {
+            ListViewItem lviNesnesi = new ListViewItem(Tarih);
+            lviNesnesi.SubItems.Add(Enlem);
+            lviNesnesi.SubItems.Add(Boylam);
+            lviNesnesi.SubItems.Add(Derinlik);
+            lviNesnesi.SubItems.Add(Siddet);
+            lviNesnesi.SubItems.Add(Yer);
             lvListe.Items.Add(lviNesnesi);
         }
 

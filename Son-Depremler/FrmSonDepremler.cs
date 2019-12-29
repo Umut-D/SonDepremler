@@ -45,7 +45,7 @@ namespace Son_Depremler
             ListeleVeBilgilendir();
         }
 
-        private void timer_Tick(object sender, EventArgs e)
+        private void Timer_Tick(object sender, EventArgs e)
         {
             ListeleVeBilgilendir();
         }

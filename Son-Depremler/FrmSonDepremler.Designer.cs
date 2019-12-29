@@ -128,7 +128,7 @@
             // zamanlayici
             // 
             this.zamanlayici.Interval = 30000;
-            this.zamanlayici.Tick += new System.EventHandler(this.timer_Tick);
+            this.zamanlayici.Tick += new System.EventHandler(this.Timer_Tick);
             // 
             // menuStrip
             // 
