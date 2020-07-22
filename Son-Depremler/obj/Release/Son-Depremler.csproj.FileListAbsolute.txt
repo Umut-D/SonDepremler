@@ -22,3 +22,30 @@ C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Release\Son-Depremler.cspr
 C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Release\Son-Depremler.csproj.CopyComplete
 C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Release\Son Depremler.exe
 C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Release\Son Depremler.pdb
+D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\bin\Release\Son Depremler.exe.config
+D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\bin\Release\Son Depremler.exe
+D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\bin\Release\Son Depremler.pdb
+D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\bin\Release\HtmlAgilityPack.dll
+D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\bin\Release\HtmlAgilityPack.pdb
+D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\bin\Release\HtmlAgilityPack.xml
+D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Release\Son_Depremler.FrmSonDepremler.resources
+D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Release\Son_Depremler.Properties.Resources.resources
+D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Release\Son-Depremler.csproj.GenerateResource.cache
+D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Release\Son-Depremler.csproj.CoreCompileInputs.cache
+D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Release\Son-Depremler.csproj.CopyComplete
+D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Release\Son Depremler.exe
+D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Release\Son Depremler.pdb
+D:\Downloads\son-depremler-proje\Son-Depremler\Son-Depremler\bin\Release\Son Depremler.exe.config
+D:\Downloads\son-depremler-proje\Son-Depremler\Son-Depremler\bin\Release\Son Depremler.exe
+D:\Downloads\son-depremler-proje\Son-Depremler\Son-Depremler\bin\Release\Son Depremler.pdb
+D:\Downloads\son-depremler-proje\Son-Depremler\Son-Depremler\bin\Release\HtmlAgilityPack.dll
+D:\Downloads\son-depremler-proje\Son-Depremler\Son-Depremler\bin\Release\HtmlAgilityPack.pdb
+D:\Downloads\son-depremler-proje\Son-Depremler\Son-Depremler\bin\Release\HtmlAgilityPack.xml
+D:\Downloads\son-depremler-proje\Son-Depremler\Son-Depremler\obj\Release\Son-Depremler.csprojAssemblyReference.cache
+D:\Downloads\son-depremler-proje\Son-Depremler\Son-Depremler\obj\Release\Son_Depremler.FrmSonDepremler.resources
+D:\Downloads\son-depremler-proje\Son-Depremler\Son-Depremler\obj\Release\Son_Depremler.Properties.Resources.resources
+D:\Downloads\son-depremler-proje\Son-Depremler\Son-Depremler\obj\Release\Son-Depremler.csproj.GenerateResource.cache
+D:\Downloads\son-depremler-proje\Son-Depremler\Son-Depremler\obj\Release\Son-Depremler.csproj.CoreCompileInputs.cache
+D:\Downloads\son-depremler-proje\Son-Depremler\Son-Depremler\obj\Release\Son-Depremler.csproj.CopyComplete
+D:\Downloads\son-depremler-proje\Son-Depremler\Son-Depremler\obj\Release\Son Depremler.exe
+D:\Downloads\son-depremler-proje\Son-Depremler\Son-Depremler\obj\Release\Son Depremler.pdb

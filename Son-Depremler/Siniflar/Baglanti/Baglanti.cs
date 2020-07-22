@@ -15,7 +15,7 @@ namespace Son_Depremler.Siniflar.Baglanti
             if (NetKontrol())
             {
                 HtmlDocument htmlBelge = BelgeOku();
-                BilgileriOkuVeYaz(htmlBelge);
+                BilgileriOku(htmlBelge);
             }
             else
             {
@@ -25,9 +25,7 @@ namespace Son_Depremler.Siniflar.Baglanti
 
         private static HtmlDocument BelgeOku()
         {
-            string webAdres = @"http://www.koeri.boun.edu.tr/scripts/lst7.asp";
-            WebRequest webIstemi = WebRequest.Create(webAdres);
-            WebResponse webDonusDegeri = webIstemi.GetResponse();
+            WebResponse webDonusDegeri = Baglan();
             StreamReader oku = new StreamReader(webDonusDegeri.GetResponseStream() ?? throw new InvalidOperationException());
 
             HtmlDocument htmlBelge = new HtmlDocument();
@@ -36,7 +34,15 @@ namespace Son_Depremler.Siniflar.Baglanti
             return htmlBelge;
         }
 
-        private static void BilgileriOkuVeYaz(HtmlDocument htmlBelge)
+        private static WebResponse Baglan()
+        {
+            string webAdres = @"http://www.koeri.boun.edu.tr/scripts/lst7.asp";
+            WebRequest webIstemi = WebRequest.Create(webAdres);
+            WebResponse webDonusDegeri = webIstemi.GetResponse();
+            return webDonusDegeri;
+        }
+
+        private static void BilgileriOku(HtmlDocument htmlBelge)
         {
             HtmlNodeCollection depremBilgileri = htmlBelge.DocumentNode.SelectNodes("/html/body/pre/text()[1]");
 
@@ -44,6 +50,11 @@ namespace Son_Depremler.Siniflar.Baglanti
             foreach (HtmlNode depremler in depremBilgileri)
                 degerler = depremler.OuterHtml;
 
+            BilgileriYaz(degerler);
+        }
+
+        private static void BilgileriYaz(string degerler)
+        {
             File.WriteAllText(Environment.CurrentDirectory + "//depremler", degerler, Encoding.UTF8);
         }
     }
