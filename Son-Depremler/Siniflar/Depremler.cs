@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Son_Depremler.Properties;
 using Son_Depremler.Siniflar.Form;
+using Son_Depremler.Siniflar.Baglanti;
 
 namespace Son_Depremler.Siniflar
 {
@@ -21,7 +21,8 @@ namespace Son_Depremler.Siniflar
         {
             lvListe.Items.Clear();
 
-            Baglanti.Baglanti.VeriAl();
+            Baglan baglan = new Baglan();
+            baglan.VeriAl();
             VerileriOku(lvListe, depremSayisi);
 
             _araclar.DepremSiddetiRenklendir(lvListe);
@@ -33,7 +34,7 @@ namespace Son_Depremler.Siniflar
 
         private void VerileriOku(ListView lvListe, int depremSayisi)
         {
-            List<string> satirlar = new List<string>(File.ReadAllLines(Environment.CurrentDirectory + "//depremler", Encoding.UTF8));
+            List<string> satirlar = new List<string>(File.ReadAllLines(Directory.GetCurrentDirectory() + "//depremler", Encoding.UTF8));
             for (int satir = 7; satir < depremSayisi; satir++)
                 NesneleriOku(lvListe, satirlar, satir);
         }

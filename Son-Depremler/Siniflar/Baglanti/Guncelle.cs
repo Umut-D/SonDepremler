@@ -12,22 +12,21 @@ namespace Son_Depremler.Siniflar.Baglanti
         {
             try
             {
-                XmlOku(WebIstemcisi());
+                XmlOku(WebIstemci());
             }
             catch (Exception)
             {
-                MessageBox.Show(@"Bağlantı sağlanırken istenmeyen bir hata meydana geldi. İnternet bağlantınızı kontrol etseniz iyi olur.",
-                    @"Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Bağlantı sağlanırken istenmeyen bir hata meydana geldi. İnternet bağlantınızı kontrol etseniz iyi olur.", @"Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private WebClient WebIstemcisi()
+        private WebClient WebIstemci()
         {
             // Web sitesine RSS okuyucu olarak istem yapmak gerek. Yoksa istek reddedilebilmekte
-            WebClient webIstemcisi = new WebClient();
-            webIstemcisi.Headers.Add("user-agent", "MyRSSReader/1.0");
+            WebClient webIstemci = new WebClient();
+            webIstemci.Headers.Add("user-agent", "MyRSSReader/1.0");
 
-            return webIstemcisi;
+            return webIstemci;
         }
 
         private void XmlOku(WebClient webIstemcisi)
@@ -48,7 +47,7 @@ namespace Son_Depremler.Siniflar.Baglanti
         private void VersiyonKarsilastir(XmlReader xmlOku)
         {
             // TODO Her yeni versiyonda bu alan ve sunucudaki XML dosyası güncellecek
-            string versiyon = "1.11";
+            string versiyon = "1.12";
             string sunucudakiVersiyon = xmlOku.GetAttribute("version");
 
             if (sunucudakiVersiyon == versiyon)

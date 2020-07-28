@@ -28,7 +28,7 @@
     <PublisherName>Umut D.</PublisherName>
     <SuiteName>Son-Depremler</SuiteName>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.1.1.%2a</ApplicationVersion>
+    <ApplicationVersion>1.1.2.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -79,7 +79,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Siniflar\Baglanti\Baglanti.cs" />
+    <Compile Include="Siniflar\Baglanti\Baglan.cs" />
     <Compile Include="Siniflar\Baglanti\Guncelle.cs" />
     <Compile Include="Siniflar\Bildirimler.cs" />
     <Compile Include="Siniflar\Deprem.cs" />
