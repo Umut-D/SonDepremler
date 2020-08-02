@@ -24,6 +24,8 @@ namespace Son_Depremler
             Araclar.Dakika();
             Araclar.Ses();
             Araclar.DepremSayisi();
+
+            toolTip.SetToolTip(btnYenile, "F5 Tuşuyla da yenileme yapılabilir");
         }
 
         private void ListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -169,6 +171,15 @@ namespace Son_Depremler
         {
             _depremler.Listele(listView, zamanlayici);
             tsslDurum.Text = _bilgilendir.SonGuncelleme();
+        }
+        
+        // F5 tuşuna basılınca yenileme yap
+        private void FrmSonDepremler_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F5)
+            {
+                BtnYenile_Click(null, null);
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -34,7 +35,9 @@ namespace Son_Depremler.Siniflar
 
         private void VerileriOku(ListView lvListe, int depremSayisi)
         {
-            List<string> satirlar = new List<string>(File.ReadAllLines(Directory.GetCurrentDirectory() + "//depremler", Encoding.UTF8));
+            string[] okunanVeri = File.ReadAllLines(Directory.GetCurrentDirectory() + "//depremler", Encoding.UTF8);
+            List<string> satirlar = new List<string>(okunanVeri);
+            
             for (int satir = 7; satir < depremSayisi; satir++)
                 NesneleriOku(lvListe, satirlar, satir);
         }
@@ -49,12 +52,28 @@ namespace Son_Depremler.Siniflar
 
         private void Deprem(List<string> dizi)
         {
-            Tarih = dizi[0];
+            TarihDuzenle(dizi[0]);
             Enlem = dizi[1];
             Boylam = dizi[2];
             Derinlik = dizi[3];
             Siddet = dizi[5];
             Yer = dizi[7];
+        }
+
+        private void TarihDuzenle(string tarih)
+        {
+            // Türkiye saatini al (Türkiye saati UTC+3)
+            string turkiyeTarih = DateTime.UtcNow.Add(new TimeSpan(3, 0, 0)).Date.ToString("dd/MM/yyyy");
+
+            // Dünkü Türkiye saatini al
+            string dunkuTurkiyeTarih = DateTime.UtcNow.Add(new TimeSpan(-24, 0, 0)).Date.ToString("dd/MM/yyyy");
+
+            //Eğer türkiye saati ile gün aynı ise gün aynı ise bugün, dünse dün yaz
+            Tarih = Convert.ToDateTime(tarih).ToString("dd/MM/yyyy");
+            if (Tarih.StartsWith(turkiyeTarih))
+                Tarih = "Bugün " + Convert.ToDateTime(tarih).ToString("HH:mm:ss");
+            else if(Tarih.StartsWith(dunkuTurkiyeTarih))
+                Tarih = "Dün " + Convert.ToDateTime(tarih).ToString("HH:mm:ss");
         }
 
         private void LviNesnesineEkle(ListView lvListe)

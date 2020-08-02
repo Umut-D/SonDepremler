@@ -65,6 +65,7 @@
             this.cmsSagTikMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmsGoster = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsCikis = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.cmsSagTikMenu.SuspendLayout();
@@ -82,6 +83,7 @@
             this.listView.FullRowSelect = true;
             this.listView.GridLines = true;
             this.listView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listView.HideSelection = false;
             this.listView.Location = new System.Drawing.Point(12, 27);
             this.listView.MultiSelect = false;
             this.listView.Name = "listView";
@@ -167,35 +169,35 @@
             // tsmi20Deprem
             // 
             this.tsmi20Deprem.Name = "tsmi20Deprem";
-            this.tsmi20Deprem.Size = new System.Drawing.Size(252, 30);
+            this.tsmi20Deprem.Size = new System.Drawing.Size(131, 30);
             this.tsmi20Deprem.Text = "20";
             this.tsmi20Deprem.Click += new System.EventHandler(this.Tsmi20Deprem_Click);
             // 
             // tsmi50Deprem
             // 
             this.tsmi50Deprem.Name = "tsmi50Deprem";
-            this.tsmi50Deprem.Size = new System.Drawing.Size(252, 30);
+            this.tsmi50Deprem.Size = new System.Drawing.Size(131, 30);
             this.tsmi50Deprem.Text = "50";
             this.tsmi50Deprem.Click += new System.EventHandler(this.Tsmi50Deprem_Click);
             // 
             // tsmi100Deprem
             // 
             this.tsmi100Deprem.Name = "tsmi100Deprem";
-            this.tsmi100Deprem.Size = new System.Drawing.Size(252, 30);
+            this.tsmi100Deprem.Size = new System.Drawing.Size(131, 30);
             this.tsmi100Deprem.Text = "100";
             this.tsmi100Deprem.Click += new System.EventHandler(this.Tsmi100Deprem_Click);
             // 
             // tsmi150Deprem
             // 
             this.tsmi150Deprem.Name = "tsmi150Deprem";
-            this.tsmi150Deprem.Size = new System.Drawing.Size(252, 30);
+            this.tsmi150Deprem.Size = new System.Drawing.Size(131, 30);
             this.tsmi150Deprem.Text = "150";
             this.tsmi150Deprem.Click += new System.EventHandler(this.Tsmi150Deprem_Click);
             // 
             // tsmi200Deprem
             // 
             this.tsmi200Deprem.Name = "tsmi200Deprem";
-            this.tsmi200Deprem.Size = new System.Drawing.Size(252, 30);
+            this.tsmi200Deprem.Size = new System.Drawing.Size(131, 30);
             this.tsmi200Deprem.Text = "200";
             this.tsmi200Deprem.Click += new System.EventHandler(this.Tsmi200Deprem_Click);
             // 
@@ -362,6 +364,7 @@
             this.Controls.Add(this.menuStrip);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.969231F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
@@ -371,6 +374,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Son Depremler";
             this.Load += new System.EventHandler(this.FrmSonDepremler_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmSonDepremler_KeyDown);
             this.Resize += new System.EventHandler(this.FrmSonDepremler_Resize);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
@@ -418,6 +422,7 @@
         public System.Windows.Forms.ToolStripMenuItem tsmi150Deprem;
         public System.Windows.Forms.ToolStripMenuItem tsmi200Deprem;
         public System.Windows.Forms.ToolStripMenuItem tsmiDepremSayisi;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }
 

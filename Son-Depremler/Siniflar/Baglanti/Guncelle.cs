@@ -47,7 +47,7 @@ namespace Son_Depremler.Siniflar.Baglanti
         private void VersiyonKarsilastir(XmlReader xmlOku)
         {
             // TODO Her yeni versiyonda bu alan ve sunucudaki XML dosyası güncellecek
-            string versiyon = "1.12";
+            string versiyon = "1.13";
             string sunucudakiVersiyon = xmlOku.GetAttribute("version");
 
             if (sunucudakiVersiyon == versiyon)
@@ -58,7 +58,7 @@ namespace Son_Depremler.Siniflar.Baglanti
                     @"Güncelle", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
                 if (guncelleDiyalog == DialogResult.OK)
-                    Process.Start("http://www.umutd.com/programlar/eksi-sozluk-debe");
+                    Process.Start("http://www.umutd.com/programlar/son-depremler");
             }
         }
     }

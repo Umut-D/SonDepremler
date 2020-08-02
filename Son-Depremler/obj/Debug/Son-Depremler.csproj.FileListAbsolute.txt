@@ -21,16 +21,3 @@ D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Debug\Son-D
 D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Debug\Son-Depremler.csproj.CopyComplete
 D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Debug\Son Depremler.exe
 D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Debug\Son Depremler.pdb
-C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\bin\Debug\Son Depremler.exe.config
-C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\bin\Debug\Son Depremler.exe
-C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\bin\Debug\Son Depremler.pdb
-C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\bin\Debug\HtmlAgilityPack.dll
-C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\bin\Debug\HtmlAgilityPack.pdb
-C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\bin\Debug\HtmlAgilityPack.xml
-C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Debug\Son_Depremler.FrmSonDepremler.resources
-C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Debug\Son_Depremler.Properties.Resources.resources
-C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Debug\Son-Depremler.csproj.GenerateResource.cache
-C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Debug\Son-Depremler.csproj.CoreCompileInputs.cache
-C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Debug\Son-Depremler.csproj.CopyComplete
-C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Debug\Son Depremler.exe
-C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Debug\Son Depremler.pdb
