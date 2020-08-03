@@ -50,3 +50,4 @@ C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Release\Son-Depremler.cspr
 C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Release\Son-Depremler.csproj.CopyComplete
 C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Release\Son Depremler.exe
 C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Release\Son Depremler.pdb
+C:\Users\Zeta\Desktop\Son-Depremler\Son-Depremler\obj\Release\Son-Depremler.csprojAssemblyReference.cache

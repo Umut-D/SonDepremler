@@ -12,7 +12,7 @@ namespace Son_Depremler.Siniflar.Baglanti
         {
             try
             {
-                XmlOku(WebIstemci());
+                XmlOku();
             }
             catch (Exception)
             {
@@ -20,23 +20,16 @@ namespace Son_Depremler.Siniflar.Baglanti
             }
         }
 
-        private WebClient WebIstemci()
-        {
-            // Web sitesine RSS okuyucu olarak istem yapmak gerek. Yoksa istek reddedilebilmekte
-            WebClient webIstemci = new WebClient();
-            webIstemci.Headers.Add("user-agent", "MyRSSReader/1.0");
-
-            return webIstemci;
-        }
-
-        private void XmlOku(WebClient webIstemcisi)
+        private void XmlOku()
         {
             string guncellemeLinki = @"https://raw.githubusercontent.com/Umut-D/umutd.com/master/assets/program-versions/son-depremler.xml";
+
+            WebClient webIstemcisi = new WebClient();
             XmlReader xmlOku = XmlReader.Create(webIstemcisi.OpenRead(guncellemeLinki) ?? throw new InvalidOperationException());
 
             while (xmlOku.Read())
             {
-                // XML dosyasında eksi kelimesiyle baslayan alan bulunmazsa okuma yapma
+                // XML dosyasında depremler kelimesiyle baslayan alan bulunmazsa okuma yapma
                 if (xmlOku.NodeType != XmlNodeType.Element || xmlOku.Name != "depremler" || !xmlOku.HasAttributes)
                     continue;
                 
@@ -47,7 +40,7 @@ namespace Son_Depremler.Siniflar.Baglanti
         private void VersiyonKarsilastir(XmlReader xmlOku)
         {
             // TODO Her yeni versiyonda bu alan ve sunucudaki XML dosyası güncellecek
-            string versiyon = "1.13";
+            string versiyon = "1.14";
             string sunucudakiVersiyon = xmlOku.GetAttribute("version");
 
             if (sunucudakiVersiyon == versiyon)
