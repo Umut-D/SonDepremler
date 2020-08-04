@@ -38,7 +38,7 @@ namespace Son_Depremler.Siniflar
             string[] okunanVeri = File.ReadAllLines(Directory.GetCurrentDirectory() + "//depremler", Encoding.UTF8);
             List<string> satirlar = new List<string>(okunanVeri);
             
-            for (int satir = 7; satir < depremSayisi; satir++)
+            for (int satir = 6; satir < depremSayisi; satir++)
                 NesneleriOku(lvListe, satirlar, satir);
         }
 
@@ -98,8 +98,8 @@ namespace Son_Depremler.Siniflar
 
         public void Listele(ListView lvListe, Timer zamanlayici)
         {
-            // Web sitesinden çekilen verideki deprem bilgileri 7. satırdan başlıyor
-            int depremSayi = (int) Settings.Default["DepremSayi"] + 7;
+            // Web sitesinden çekilen verideki deprem bilgileri 6. satırdan başlıyor
+            int depremSayi = (int) Settings.Default["DepremSayi"] + 6;
             ListeOlustur(lvListe, depremSayi);
 
             _sonZaman = lvListe.Items[0].Text;

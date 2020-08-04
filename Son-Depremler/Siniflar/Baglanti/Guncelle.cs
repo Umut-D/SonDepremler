@@ -40,7 +40,7 @@ namespace Son_Depremler.Siniflar.Baglanti
         private void VersiyonKarsilastir(XmlReader xmlOku)
         {
             // TODO Her yeni versiyonda bu alan ve sunucudaki XML dosyası güncellecek
-            string versiyon = "1.14";
+            string versiyon = "1.15";
             string sunucudakiVersiyon = xmlOku.GetAttribute("version");
 
             if (sunucudakiVersiyon == versiyon)
