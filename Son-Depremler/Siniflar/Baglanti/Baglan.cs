@@ -9,6 +9,8 @@ namespace Son_Depremler.Siniflar.Baglanti
 {
     public sealed class Baglan : Internet
     {
+        readonly Deprem _deprem = new Deprem();
+
         public void VeriAl()
         {
             if (NetKontrol())
@@ -18,7 +20,8 @@ namespace Son_Depremler.Siniflar.Baglanti
             }
             else
             {
-                MessageBox.Show(@"Maalesef internet bağlantınız yok.", @"Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Maalesef internet bağlantınız yok.", @"Hata", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
@@ -51,11 +54,26 @@ namespace Son_Depremler.Siniflar.Baglanti
                 degerler = depremler.OuterHtml;
 
             Kaydet(degerler);
+            depremBilgileri.Clear();
+        }
+
+        // İndirilen Html dosyasını gizle
+        private void Gizle()
+        {
+            File.SetAttributes(_deprem.Dizin, FileAttributes.Hidden);
         }
 
         private void Kaydet(string degerler)
         {
-            File.WriteAllText(Directory.GetCurrentDirectory() + "//depremler", degerler, Encoding.UTF8);
+            using (FileStream dosyaAkis = new FileStream(_deprem.Dizin, FileMode.OpenOrCreate))
+            {
+                using (StreamWriter yaz = new StreamWriter(dosyaAkis, Encoding.UTF8))
+                {
+                    yaz.Write(degerler);
+                }
+            }
+
+            Gizle();
         }
     }
 }

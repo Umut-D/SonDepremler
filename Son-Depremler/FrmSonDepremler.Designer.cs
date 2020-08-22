@@ -373,6 +373,7 @@
             this.Name = "FrmSonDepremler";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Son Depremler";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmSonDepremler_FormClosing);
             this.Load += new System.EventHandler(this.FrmSonDepremler_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmSonDepremler_KeyDown);
             this.Resize += new System.EventHandler(this.FrmSonDepremler_Resize);

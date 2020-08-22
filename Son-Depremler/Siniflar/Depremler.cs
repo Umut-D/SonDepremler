@@ -12,8 +12,7 @@ namespace Son_Depremler.Siniflar
 {
     class Depremler : Deprem
     {
-        private string _ilkZaman;
-        private string _sonZaman;
+        private string _ilkZaman, _sonZaman;
         private readonly Araclar _araclar = new Araclar(null);
         private readonly Bildirimler _bilgilendir = new Bildirimler();
 
@@ -35,11 +34,21 @@ namespace Son_Depremler.Siniflar
 
         private void VerileriOku(ListView lvListe, int depremSayisi)
         {
-            string[] okunanVeri = File.ReadAllLines(Directory.GetCurrentDirectory() + "//depremler", Encoding.UTF8);
-            List<string> satirlar = new List<string>(okunanVeri);
-            
-            for (int satir = 6; satir < depremSayisi; satir++)
-                NesneleriOku(lvListe, satirlar, satir);
+            using (FileStream dosyaAkis = new FileStream(Dizin, FileMode.OpenOrCreate))
+            {
+                using (StreamReader oku = new StreamReader(dosyaAkis, Encoding.UTF8))
+                {
+                    List<string> satirlar = new List<string>();
+                    string okunanSatir;
+                    while ((okunanSatir = oku.ReadLine()) != null)
+                    {
+                        satirlar.Add(okunanSatir);
+                    }
+
+                    for (int satir = 6; satir < depremSayisi; satir++)
+                        NesneleriOku(lvListe, satirlar, satir);
+                }
+            }
         }
 
         private void NesneleriOku(ListView lvListe, List<string> satirlar, int satir)

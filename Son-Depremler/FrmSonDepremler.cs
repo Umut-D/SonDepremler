@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 using Son_Depremler.Siniflar;
 using Son_Depremler.Siniflar.Baglanti;
@@ -167,12 +168,18 @@ namespace Son_Depremler
             Application.Exit();
         }
 
+        private void FrmSonDepremler_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (File.Exists(_depremler.Dizin))
+                File.Delete(_depremler.Dizin);
+        }
+
         private void ListeleVeBilgilendir()
         {
             _depremler.Listele(listView, zamanlayici);
             tsslDurum.Text = _bilgilendir.SonGuncelleme();
         }
-        
+
         // F5 tuşuna basılınca yenileme yap
         private void FrmSonDepremler_KeyDown(object sender, KeyEventArgs e)
         {

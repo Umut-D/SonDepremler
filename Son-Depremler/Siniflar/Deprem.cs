@@ -1,4 +1,6 @@
-﻿namespace Son_Depremler.Siniflar
+﻿using System.IO;
+
+namespace Son_Depremler.Siniflar
 {
     class Deprem
     {
@@ -8,5 +10,7 @@
         public string Derinlik { get; set; }
         public string Siddet { get; set; }
         public string Yer { get; set; }
+
+        public string Dizin => Directory.GetCurrentDirectory() + "//depremler";
     }
 }
