@@ -41,9 +41,7 @@ namespace Son_Depremler.Siniflar
                     List<string> satirlar = new List<string>();
                     string okunanSatir;
                     while ((okunanSatir = oku.ReadLine()) != null)
-                    {
                         satirlar.Add(okunanSatir);
-                    }
 
                     for (int satir = 6; satir < depremSayisi; satir++)
                         NesneleriOku(lvListe, satirlar, satir);
@@ -53,10 +51,20 @@ namespace Son_Depremler.Siniflar
 
         private void NesneleriOku(ListView lvListe, List<string> satirlar, int satir)
         {
-            List<string> dizi = new List<string>(Regex.Split(satirlar[satir], @"[ \t]{2,}"));
-            Deprem(dizi);
+            try
+            {
+                if (satirlar.Count > 0)
+                {
+                    List<string> dizi = new List<string>(Regex.Split(satirlar[satir], @"[ \t]{2,}"));
+                    Deprem(dizi);
 
-            LviNesnesineEkle(lvListe);
+                    LviNesnesineEkle(lvListe);
+                }
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show($@"Şöyle bir {hata.Message} hata oldu!", @"Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Deprem(List<string> dizi)
@@ -81,7 +89,7 @@ namespace Son_Depremler.Siniflar
             Tarih = Convert.ToDateTime(tarih).ToString("dd/MM/yyyy");
             if (Tarih.StartsWith(turkiyeTarih))
                 Tarih = "Bugün " + Convert.ToDateTime(tarih).ToString("HH:mm:ss");
-            else if(Tarih.StartsWith(dunkuTurkiyeTarih))
+            else if (Tarih.StartsWith(dunkuTurkiyeTarih))
                 Tarih = "Dün " + Convert.ToDateTime(tarih).ToString("HH:mm:ss");
         }
 

@@ -47,14 +47,23 @@ namespace Son_Depremler.Siniflar.Baglanti
 
         private void Oku(HtmlDocument htmlBelge)
         {
-            HtmlNodeCollection depremBilgileri = htmlBelge.DocumentNode.SelectNodes("/html/body/pre/text()[1]");
+            try
+            {
+                HtmlNodeCollection depremBilgileri = htmlBelge?.DocumentNode?.SelectNodes(_deprem.Dugum);
 
-            string degerler = string.Empty;
-            foreach (HtmlNode depremler in depremBilgileri)
-                degerler = depremler.OuterHtml;
+                if (depremBilgileri != null && depremBilgileri.Count > 0)
+                {
+                    string degerler = string.Empty;
+                    foreach (HtmlNode depremler in depremBilgileri)
+                        degerler = depremler.OuterHtml;
 
-            Kaydet(degerler);
-            depremBilgileri.Clear();
+                    Kaydet(degerler);
+                }
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show($@"Şöyle bir {hata.Message} hata oldu!", @"Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         // İndirilen Html dosyasını gizle

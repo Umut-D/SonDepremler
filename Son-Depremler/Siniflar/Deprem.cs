@@ -12,5 +12,6 @@ namespace Son_Depremler.Siniflar
         public string Yer { get; set; }
 
         public string Dizin => Directory.GetCurrentDirectory() + "//depremler";
+        public string Dugum => "/html/body/pre/text()[1]";
     }
 }
