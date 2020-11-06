@@ -10,11 +10,19 @@ using Son_Depremler.Siniflar.Baglanti;
 
 namespace Son_Depremler.Siniflar
 {
-    class Depremler : Deprem
+    class Depremler
     {
+        public Deprem Deprem { get; set; }
+        private readonly Araclar _araclar;
+        private readonly Bildirimler _bilgilendir;
         private string _ilkZaman, _sonZaman;
-        private readonly Araclar _araclar = new Araclar(null);
-        private readonly Bildirimler _bilgilendir = new Bildirimler();
+
+        public Depremler()
+        {
+            Deprem = new Deprem();
+            _araclar =  new Araclar(null);
+            _bilgilendir = new Bildirimler();
+        }
 
         // İndirilen sayfayı ayrıştır ve listeye taşı
         private void ListeOlustur(ListView lvListe, int depremSayisi)
@@ -34,7 +42,7 @@ namespace Son_Depremler.Siniflar
 
         private void VerileriOku(ListView lvListe, int depremSayisi)
         {
-            using (FileStream dosyaAkis = new FileStream(Dizin, FileMode.OpenOrCreate))
+            using (FileStream dosyaAkis = new FileStream(Deprem.Dizin, FileMode.OpenOrCreate))
             {
                 using (StreamReader oku = new StreamReader(dosyaAkis, Encoding.UTF8))
                 {
@@ -56,7 +64,7 @@ namespace Son_Depremler.Siniflar
                 if (satirlar.Count > 0)
                 {
                     List<string> dizi = new List<string>(Regex.Split(satirlar[satir], @"[ \t]{2,}"));
-                    Deprem(dizi);
+                    Liste(dizi);
 
                     LviNesnesineEkle(lvListe);
                 }
@@ -67,14 +75,14 @@ namespace Son_Depremler.Siniflar
             }
         }
 
-        private void Deprem(List<string> dizi)
+        private void Liste(List<string> dizi)
         {
             TarihDuzenle(dizi[0]);
-            Enlem = dizi[1];
-            Boylam = dizi[2];
-            Derinlik = dizi[3];
-            Siddet = dizi[5];
-            Yer = dizi[7];
+            Deprem.Enlem = dizi[1];
+            Deprem.Boylam = dizi[2];
+            Deprem.Derinlik = dizi[3];
+            Deprem.Siddet = dizi[5];
+            Deprem.Yer = dizi[7];
         }
 
         private void TarihDuzenle(string tarih)
@@ -86,21 +94,21 @@ namespace Son_Depremler.Siniflar
             string dunkuTurkiyeTarih = DateTime.UtcNow.Add(new TimeSpan(-24, 0, 0)).Date.ToString("dd/MM/yyyy");
 
             //Eğer türkiye saati ile gün aynı ise gün aynı ise bugün, dünse dün yaz
-            Tarih = Convert.ToDateTime(tarih).ToString("dd/MM/yyyy");
-            if (Tarih.StartsWith(turkiyeTarih))
-                Tarih = "Bugün " + Convert.ToDateTime(tarih).ToString("HH:mm:ss");
-            else if (Tarih.StartsWith(dunkuTurkiyeTarih))
-                Tarih = "Dün " + Convert.ToDateTime(tarih).ToString("HH:mm:ss");
+            Deprem.Tarih = Convert.ToDateTime(tarih).ToString("dd/MM/yyyy");
+            if (Deprem.Tarih.StartsWith(turkiyeTarih))
+                Deprem.Tarih = "Bugün " + Convert.ToDateTime(tarih).ToString("HH:mm:ss");
+            else if (Deprem.Tarih.StartsWith(dunkuTurkiyeTarih))
+                Deprem.Tarih = "Dün " + Convert.ToDateTime(tarih).ToString("HH:mm:ss");
         }
 
         private void LviNesnesineEkle(ListView lvListe)
         {
-            ListViewItem lviNesnesi = new ListViewItem(Tarih);
-            lviNesnesi.SubItems.Add(Enlem);
-            lviNesnesi.SubItems.Add(Boylam);
-            lviNesnesi.SubItems.Add(Derinlik);
-            lviNesnesi.SubItems.Add(Siddet);
-            lviNesnesi.SubItems.Add(Yer);
+            ListViewItem lviNesnesi = new ListViewItem(Deprem.Tarih);
+            lviNesnesi.SubItems.Add(Deprem.Enlem);
+            lviNesnesi.SubItems.Add(Deprem.Boylam);
+            lviNesnesi.SubItems.Add(Deprem.Derinlik);
+            lviNesnesi.SubItems.Add(Deprem.Siddet);
+            lviNesnesi.SubItems.Add(Deprem.Yer);
             lvListe.Items.Add(lviNesnesi);
         }
 

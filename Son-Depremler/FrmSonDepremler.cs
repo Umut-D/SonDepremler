@@ -9,15 +9,17 @@ namespace Son_Depremler
 {
     public partial class FrmSonDepremler : Form
     {
+        private readonly Depremler _depremler;
+        private readonly Bildirimler _bilgilendir;
+        private Araclar Araclar { get; }
+
         public FrmSonDepremler()
         {
             InitializeComponent();
             Araclar = new Araclar(this);
+            _depremler = new Depremler();
+            _bilgilendir = new Bildirimler();
         }
-
-        private readonly Depremler _depremler = new Depremler();
-        private readonly Bildirimler _bilgilendir = new Bildirimler();
-        private Araclar Araclar { get; }
 
         public void FrmSonDepremler_Load(object sender, EventArgs e)
         {
@@ -170,8 +172,8 @@ namespace Son_Depremler
 
         private void FrmSonDepremler_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (File.Exists(_depremler.Dizin))
-                File.Delete(_depremler.Dizin);
+            if (File.Exists(_depremler.Deprem.Dizin))
+                File.Delete(_depremler.Deprem.Dizin);
         }
 
         private void ListeleVeBilgilendir()

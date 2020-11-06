@@ -19,10 +19,7 @@ namespace Son_Depremler.Siniflar.Baglanti
                 Oku(htmlBelge);
             }
             else
-            {
-                MessageBox.Show(@"Maalesef internet bağlantınız yok.", @"Hata", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
+                MessageBox.Show(@"Maalesef internet bağlantınız yok.", @"Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private string SunucuSec()
