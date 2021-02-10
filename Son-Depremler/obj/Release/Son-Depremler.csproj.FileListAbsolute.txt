@@ -44,7 +44,6 @@ D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\bin\Release\Son
 D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\bin\Release\HtmlAgilityPack.dll
 D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\bin\Release\HtmlAgilityPack.pdb
 D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\bin\Release\HtmlAgilityPack.xml
-D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Release\Son-Depremler.csprojAssemblyReference.cache
 D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Release\Son_Depremler.FrmSonDepremler.resources
 D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Release\Son_Depremler.Properties.Resources.resources
 D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Release\Son-Depremler.csproj.GenerateResource.cache
@@ -52,3 +51,4 @@ D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Release\Son
 D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Release\Son-Depremler.csproj.CopyComplete
 D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Release\Son Depremler.exe
 D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Release\Son Depremler.pdb
+D:\Belgelerim\Programlar\C#\+ Github\Son-Depremler\Son-Depremler\obj\Release\Son-Depremler.csprojAssemblyReference.cache

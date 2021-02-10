@@ -2,7 +2,6 @@
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using Son_Depremler.Properties;
 
 namespace Son_Depremler.Siniflar.Araclar
 {
@@ -28,8 +27,10 @@ namespace Son_Depremler.Siniflar.Araclar
             DepremListesi depremListesi = new DepremListesi(lvListe);
 
             // Web sitesinden çekilen verideki deprem bilgileri 6. satırdan başlıyor
-            int gosterilecekDepremSayisi = (int) Settings.Default["DepremSayi"] + 6;
-            for (int satir = 6; satir < gosterilecekDepremSayisi; satir++)
+            Ayar ayar = new Ayar(null);
+            int depremSayisi = (int) ayar.Yukle("DepremSayi") + 6;
+            
+            for (int satir = 6; satir < depremSayisi; satir++)
                 depremListesi.NesneleriOku(satirlar, satir);
         }
 

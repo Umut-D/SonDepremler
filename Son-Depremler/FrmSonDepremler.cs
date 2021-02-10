@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using Son_Depremler.Properties;
 using Son_Depremler.Siniflar;
 using Son_Depremler.Siniflar.Araclar;
 using Son_Depremler.Siniflar.Form;
@@ -51,7 +50,7 @@ namespace Son_Depremler
 
         public void TimerSifirla()
         {
-            int dakika = (int) Settings.Default["Dakika"];
+            int dakika = (int) _ayar.Yukle("Dakika");
 
             zamanlayici.Stop();
             zamanlayici.Start();

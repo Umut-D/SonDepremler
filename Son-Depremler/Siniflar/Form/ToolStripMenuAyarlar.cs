@@ -1,5 +1,5 @@
 ﻿using System.Windows.Forms;
-using Son_Depremler.Properties;
+using Son_Depremler.Siniflar.Araclar;
 using Son_Depremler.Siniflar.Sabitler;
 
 namespace Son_Depremler.Siniflar.Form
@@ -7,19 +7,21 @@ namespace Son_Depremler.Siniflar.Form
     public class ToolStripMenuAyarlar
     {
         private readonly FrmSonDepremler _frmSonDepremler;
+        private readonly Ayar _ayar;
 
         public ToolStripMenuAyarlar(FrmSonDepremler frmSonDepremler)
         {
             _frmSonDepremler = frmSonDepremler;
-        }
 
+            _ayar = new Ayar(null);
+        }
 
         public void DakikaAraligi()
         {
             foreach (ToolStripMenuItem nesne in _frmSonDepremler.tsmiGuncellemeSikligi.DropDownItems)
                 nesne.Checked = false;
-
-            GuncellemeAraligi aralik = (GuncellemeAraligi) Settings.Default["Dakika"];
+            
+            GuncellemeAraligi aralik = (GuncellemeAraligi) _ayar.Yukle("Dakika");
             switch (aralik)
             {
                 case GuncellemeAraligi.Bir:
@@ -45,7 +47,7 @@ namespace Son_Depremler.Siniflar.Form
             foreach (ToolStripMenuItem nesne in _frmSonDepremler.tsmiDepremSayisi.DropDownItems)
                 nesne.Checked = false;
 
-            GosterimSayisi gosterim = (GosterimSayisi) Settings.Default["DepremSayi"];
+            GosterimSayisi gosterim = (GosterimSayisi) _ayar.Yukle("DepremSayi");
             switch (gosterim)
             {
                 case GosterimSayisi.Yirmi:
@@ -71,7 +73,7 @@ namespace Son_Depremler.Siniflar.Form
             foreach (ToolStripMenuItem nesne in _frmSonDepremler.tsmiBildirimSesi.DropDownItems)
                 nesne.Checked = false;
 
-            bool ses = (bool) Settings.Default["Ses"];
+            bool ses = (bool) _ayar.Yukle("Ses");
             if (ses)
                 _frmSonDepremler.tsmiAcik.Checked = true;
             else

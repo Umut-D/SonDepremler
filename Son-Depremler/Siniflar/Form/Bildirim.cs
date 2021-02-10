@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Son_Depremler.Properties;
 using Son_Depremler.Siniflar.Araclar;
 
 namespace Son_Depremler.Siniflar.Form
@@ -9,6 +8,12 @@ namespace Son_Depremler.Siniflar.Form
     public class Bildirim
     {
         private string _sonDepremSaati, _sonDepremYeri, _sonDepremBuyuklugu;
+        private readonly Ayar _ayar;
+
+        public Bildirim()
+        {
+            _ayar = new Ayar(null);
+        }
 
         public void Goster(ListViewItem lvNesnesi)
         {
@@ -22,7 +27,7 @@ namespace Son_Depremler.Siniflar.Form
 
         private void UyariSesiCal()
         {
-            bool sesDurum = (bool) Settings.Default["Ses"]; // TOdo Ayarlara mı aktarsam?
+            bool sesDurum = (bool) _ayar.Yukle("Ses");
             if (sesDurum)
             {
                 Ses ses = new Ses();
@@ -45,7 +50,8 @@ namespace Son_Depremler.Siniflar.Form
 
         public string SonrakiGuncellemeZamani()
         {
-            int dakika = (int) Settings.Default["Dakika"];
+            int dakika = (int) _ayar.Yukle("Dakika");
+
             DateTime sonGuncelleme = DateTime.Now;
             string sonrakiGuncelleme = sonGuncelleme.AddMinutes(dakika).ToLongTimeString();
 
