@@ -1,4 +1,4 @@
-﻿using SonDepremlerUI.Properties;
+﻿using SonDepremlerLibrary.Properties;
 
 namespace SonDepremlerLibrary.Sistem
 {

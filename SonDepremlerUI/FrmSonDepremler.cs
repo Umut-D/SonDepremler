@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using SonDepremlerLibrary;
 using SonDepremlerLibrary.Araclar;
 using SonDepremlerLibrary.Internet;
+using SonDepremlerLibrary.Properties;
 using SonDepremlerLibrary.Sistem;
 using SonDepremlerUI.Formlar;
 
@@ -189,6 +191,28 @@ namespace SonDepremlerUI
         {
             Show();
             WindowState = FormWindowState.Normal;
+        }
+
+        private void TsmiDepremAni_Click(object sender, EventArgs e)
+        {
+            DepremAniFormunuAc(Resources.depremde_hayat_kurtaran_davranislar);
+        }
+
+        private void TsmiDepremSonrasi_Click(object sender, EventArgs e)
+        {
+            DepremAniFormunuAc(Resources.deprem_sonrasi_yapilmasi_gerekenler);
+        }
+
+        private void TsmiAfetCantasi_Click(object sender, EventArgs e)
+        {
+            DepremAniFormunuAc(Resources.afet_cantasinda_neler_olmali);
+        }
+
+        private static void DepremAniFormunuAc(Bitmap gorsel)
+        {
+            FrmDepremeDair frmDepremeDair = new FrmDepremeDair();
+            frmDepremeDair.pbox.Image = gorsel;
+            frmDepremeDair.Show();
         }
 
         private void TsmiGuncelle_Click(object sender, EventArgs e)

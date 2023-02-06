@@ -1,0 +1,12 @@
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerLibrary\bin\Release\SonDepremlerLibrary.dll
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerLibrary\bin\Release\SonDepremlerLibrary.pdb
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerLibrary\bin\Release\HtmlAgilityPack.dll
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerLibrary\bin\Release\HtmlAgilityPack.pdb
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerLibrary\bin\Release\HtmlAgilityPack.xml
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerLibrary\obj\Release\SonDepremlerLibrary.csproj.AssemblyReference.cache
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerLibrary\obj\Release\SonDepremlerLibrary.Properties.Resources.resources
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerLibrary\obj\Release\SonDepremlerLibrary.csproj.GenerateResource.cache
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerLibrary\obj\Release\SonDepremlerLibrary.csproj.CoreCompileInputs.cache
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerLibrary\obj\Release\SonDepremlerLibrary.csproj.CopyComplete
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerLibrary\obj\Release\SonDepremlerLibrary.dll
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerLibrary\obj\Release\SonDepremlerLibrary.pdb

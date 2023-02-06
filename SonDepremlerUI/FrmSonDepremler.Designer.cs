@@ -66,6 +66,10 @@
             this.cmsGoster = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsCikis = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.tsmiDepremeDair = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDepremAni = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDepremSonrasi = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAfetCantasi = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.cmsSagTikMenu.SuspendLayout();
@@ -134,13 +138,15 @@
             // 
             // menuStrip
             // 
+            this.menuStrip.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(22, 22);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiAyarlar,
+            this.tsmiDepremeDair,
             this.tsmiBilgi});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(754, 31);
+            this.menuStrip.Size = new System.Drawing.Size(748, 40);
             this.menuStrip.TabIndex = 1;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -151,7 +157,7 @@
             this.tsmiGuncellemeSikligi,
             this.tsmiBildirimSesi});
             this.tsmiAyarlar.Name = "tsmiAyarlar";
-            this.tsmiAyarlar.Size = new System.Drawing.Size(79, 27);
+            this.tsmiAyarlar.Size = new System.Drawing.Size(107, 36);
             this.tsmiAyarlar.Text = "Ayarlar";
             // 
             // tsmiDepremSayisi
@@ -163,41 +169,41 @@
             this.tsmi150Deprem,
             this.tsmi200Deprem});
             this.tsmiDepremSayisi.Name = "tsmiDepremSayisi";
-            this.tsmiDepremSayisi.Size = new System.Drawing.Size(308, 30);
+            this.tsmiDepremSayisi.Size = new System.Drawing.Size(430, 42);
             this.tsmiDepremSayisi.Text = "Gösterilecek Deprem Sayısı";
             // 
             // tsmi20Deprem
             // 
             this.tsmi20Deprem.Name = "tsmi20Deprem";
-            this.tsmi20Deprem.Size = new System.Drawing.Size(131, 30);
+            this.tsmi20Deprem.Size = new System.Drawing.Size(180, 42);
             this.tsmi20Deprem.Text = "20";
             this.tsmi20Deprem.Click += new System.EventHandler(this.Tsmi20Deprem_Click);
             // 
             // tsmi50Deprem
             // 
             this.tsmi50Deprem.Name = "tsmi50Deprem";
-            this.tsmi50Deprem.Size = new System.Drawing.Size(131, 30);
+            this.tsmi50Deprem.Size = new System.Drawing.Size(180, 42);
             this.tsmi50Deprem.Text = "50";
             this.tsmi50Deprem.Click += new System.EventHandler(this.Tsmi50Deprem_Click);
             // 
             // tsmi100Deprem
             // 
             this.tsmi100Deprem.Name = "tsmi100Deprem";
-            this.tsmi100Deprem.Size = new System.Drawing.Size(131, 30);
+            this.tsmi100Deprem.Size = new System.Drawing.Size(180, 42);
             this.tsmi100Deprem.Text = "100";
             this.tsmi100Deprem.Click += new System.EventHandler(this.Tsmi100Deprem_Click);
             // 
             // tsmi150Deprem
             // 
             this.tsmi150Deprem.Name = "tsmi150Deprem";
-            this.tsmi150Deprem.Size = new System.Drawing.Size(131, 30);
+            this.tsmi150Deprem.Size = new System.Drawing.Size(180, 42);
             this.tsmi150Deprem.Text = "150";
             this.tsmi150Deprem.Click += new System.EventHandler(this.Tsmi150Deprem_Click);
             // 
             // tsmi200Deprem
             // 
             this.tsmi200Deprem.Name = "tsmi200Deprem";
-            this.tsmi200Deprem.Size = new System.Drawing.Size(131, 30);
+            this.tsmi200Deprem.Size = new System.Drawing.Size(180, 42);
             this.tsmi200Deprem.Text = "200";
             this.tsmi200Deprem.Click += new System.EventHandler(this.Tsmi200Deprem_Click);
             // 
@@ -210,41 +216,41 @@
             this.tsmi15Dakika,
             this.tsmi30Dakika});
             this.tsmiGuncellemeSikligi.Name = "tsmiGuncellemeSikligi";
-            this.tsmiGuncellemeSikligi.Size = new System.Drawing.Size(308, 30);
+            this.tsmiGuncellemeSikligi.Size = new System.Drawing.Size(430, 42);
             this.tsmiGuncellemeSikligi.Text = "Güncelleme Sıklığı";
             // 
             // tsmi1Dakika
             // 
             this.tsmi1Dakika.Name = "tsmi1Dakika";
-            this.tsmi1Dakika.Size = new System.Drawing.Size(175, 30);
+            this.tsmi1Dakika.Size = new System.Drawing.Size(242, 42);
             this.tsmi1Dakika.Text = "1 dakika";
             this.tsmi1Dakika.Click += new System.EventHandler(this.Tsmi1Dakika_Click);
             // 
             // tsmi5Dakika
             // 
             this.tsmi5Dakika.Name = "tsmi5Dakika";
-            this.tsmi5Dakika.Size = new System.Drawing.Size(175, 30);
+            this.tsmi5Dakika.Size = new System.Drawing.Size(242, 42);
             this.tsmi5Dakika.Text = "5 dakika";
             this.tsmi5Dakika.Click += new System.EventHandler(this.Tsmi5Dakika_Click);
             // 
             // tsmi10Dakika
             // 
             this.tsmi10Dakika.Name = "tsmi10Dakika";
-            this.tsmi10Dakika.Size = new System.Drawing.Size(175, 30);
+            this.tsmi10Dakika.Size = new System.Drawing.Size(242, 42);
             this.tsmi10Dakika.Text = "10 dakika";
             this.tsmi10Dakika.Click += new System.EventHandler(this.Tsmi10Dakika_Click);
             // 
             // tsmi15Dakika
             // 
             this.tsmi15Dakika.Name = "tsmi15Dakika";
-            this.tsmi15Dakika.Size = new System.Drawing.Size(175, 30);
+            this.tsmi15Dakika.Size = new System.Drawing.Size(242, 42);
             this.tsmi15Dakika.Text = "15 dakika";
             this.tsmi15Dakika.Click += new System.EventHandler(this.Tsmi15Dakika_Click);
             // 
             // tsmi30Dakika
             // 
             this.tsmi30Dakika.Name = "tsmi30Dakika";
-            this.tsmi30Dakika.Size = new System.Drawing.Size(175, 30);
+            this.tsmi30Dakika.Size = new System.Drawing.Size(242, 42);
             this.tsmi30Dakika.Text = "30 dakika";
             this.tsmi30Dakika.Click += new System.EventHandler(this.Tsmi30Dakika_Click);
             // 
@@ -254,20 +260,20 @@
             this.tsmiAcik,
             this.tsmiKapali});
             this.tsmiBildirimSesi.Name = "tsmiBildirimSesi";
-            this.tsmiBildirimSesi.Size = new System.Drawing.Size(308, 30);
+            this.tsmiBildirimSesi.Size = new System.Drawing.Size(430, 42);
             this.tsmiBildirimSesi.Text = "Bildirim Sesi";
             // 
             // tsmiAcik
             // 
             this.tsmiAcik.Name = "tsmiAcik";
-            this.tsmiAcik.Size = new System.Drawing.Size(150, 30);
+            this.tsmiAcik.Size = new System.Drawing.Size(205, 42);
             this.tsmiAcik.Text = "Açık";
             this.tsmiAcik.Click += new System.EventHandler(this.TsmiAcik_Click);
             // 
             // tsmiKapali
             // 
             this.tsmiKapali.Name = "tsmiKapali";
-            this.tsmiKapali.Size = new System.Drawing.Size(150, 30);
+            this.tsmiKapali.Size = new System.Drawing.Size(205, 42);
             this.tsmiKapali.Text = "Kapalı";
             this.tsmiKapali.Click += new System.EventHandler(this.TsmiKapali_Click);
             // 
@@ -277,26 +283,26 @@
             this.tsmiGuncelle,
             this.tsmiHakkinda});
             this.tsmiBilgi.Name = "tsmiBilgi";
-            this.tsmiBilgi.Size = new System.Drawing.Size(58, 27);
+            this.tsmiBilgi.Size = new System.Drawing.Size(80, 36);
             this.tsmiBilgi.Text = "Bilgi";
             // 
             // tsmiGuncelle
             // 
             this.tsmiGuncelle.Name = "tsmiGuncelle";
-            this.tsmiGuncelle.Size = new System.Drawing.Size(174, 30);
+            this.tsmiGuncelle.Size = new System.Drawing.Size(341, 42);
             this.tsmiGuncelle.Text = "Guncelle";
             this.tsmiGuncelle.Click += new System.EventHandler(this.TsmiGuncelle_Click);
             // 
             // tsmiHakkinda
             // 
             this.tsmiHakkinda.Name = "tsmiHakkinda";
-            this.tsmiHakkinda.Size = new System.Drawing.Size(174, 30);
+            this.tsmiHakkinda.Size = new System.Drawing.Size(341, 42);
             this.tsmiHakkinda.Text = "Hakkinda";
             this.tsmiHakkinda.Click += new System.EventHandler(this.TsmiHakkinda_Click);
             // 
             // btnYenile
             // 
-            this.btnYenile.Image = global::SonDepremlerLibrary.Properties.Resources.yenile;
+            this.btnYenile.Image = ((System.Drawing.Image)(resources.GetObject("btnYenile.Image")));
             this.btnYenile.Location = new System.Drawing.Point(717, 0);
             this.btnYenile.Name = "btnYenile";
             this.btnYenile.Size = new System.Drawing.Size(27, 24);
@@ -309,16 +315,16 @@
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(22, 22);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsslDurum});
-            this.statusStrip.Location = new System.Drawing.Point(0, 456);
+            this.statusStrip.Location = new System.Drawing.Point(0, 439);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(754, 22);
+            this.statusStrip.Size = new System.Drawing.Size(748, 22);
             this.statusStrip.TabIndex = 3;
             this.statusStrip.Text = "statusStrip";
             // 
             // tsslDurum
             // 
             this.tsslDurum.Name = "tsslDurum";
-            this.tsslDurum.Size = new System.Drawing.Size(0, 15);
+            this.tsslDurum.Size = new System.Drawing.Size(0, 12);
             // 
             // notifyIcon
             // 
@@ -337,27 +343,58 @@
             this.cmsGoster,
             this.cmsCikis});
             this.cmsSagTikMenu.Name = "cmsSagTikMenu";
-            this.cmsSagTikMenu.Size = new System.Drawing.Size(131, 60);
+            this.cmsSagTikMenu.Size = new System.Drawing.Size(158, 80);
             // 
             // cmsGoster
             // 
             this.cmsGoster.Name = "cmsGoster";
-            this.cmsGoster.Size = new System.Drawing.Size(130, 28);
+            this.cmsGoster.Size = new System.Drawing.Size(157, 38);
             this.cmsGoster.Text = "Goster";
             this.cmsGoster.Click += new System.EventHandler(this.CmsGoster_Click);
             // 
             // cmsCikis
             // 
             this.cmsCikis.Name = "cmsCikis";
-            this.cmsCikis.Size = new System.Drawing.Size(130, 28);
+            this.cmsCikis.Size = new System.Drawing.Size(157, 38);
             this.cmsCikis.Text = "Çıkış";
             this.cmsCikis.Click += new System.EventHandler(this.CmsKapat_Click);
             // 
+            // tsmiDepremeDair
+            // 
+            this.tsmiDepremeDair.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiDepremAni,
+            this.tsmiDepremSonrasi,
+            this.tsmiAfetCantasi});
+            this.tsmiDepremeDair.Name = "tsmiDepremeDair";
+            this.tsmiDepremeDair.Size = new System.Drawing.Size(183, 36);
+            this.tsmiDepremeDair.Text = "Depreme Dair";
+            // 
+            // tsmiDepremAni
+            // 
+            this.tsmiDepremAni.Name = "tsmiDepremAni";
+            this.tsmiDepremAni.Size = new System.Drawing.Size(543, 42);
+            this.tsmiDepremAni.Text = "Depremde Hayat Kurtaran Davranışlar";
+            this.tsmiDepremAni.Click += new System.EventHandler(this.TsmiDepremAni_Click);
+            // 
+            // tsmiDepremSonrasi
+            // 
+            this.tsmiDepremSonrasi.Name = "tsmiDepremSonrasi";
+            this.tsmiDepremSonrasi.Size = new System.Drawing.Size(543, 42);
+            this.tsmiDepremSonrasi.Text = "Deprem Sonrası Yapılası Gerekenler";
+            this.tsmiDepremSonrasi.Click += new System.EventHandler(this.TsmiDepremSonrasi_Click);
+            // 
+            // tsmiAfetCantasi
+            // 
+            this.tsmiAfetCantasi.Name = "tsmiAfetCantasi";
+            this.tsmiAfetCantasi.Size = new System.Drawing.Size(543, 42);
+            this.tsmiAfetCantasi.Text = "Afet Çantasında Neler Olmalı";
+            this.tsmiAfetCantasi.Click += new System.EventHandler(this.TsmiAfetCantasi_Click);
+            // 
             // FrmSonDepremler
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(754, 478);
+            this.ClientSize = new System.Drawing.Size(748, 461);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.btnYenile);
             this.Controls.Add(this.listView);
@@ -424,6 +461,10 @@
         public System.Windows.Forms.ToolStripMenuItem tsmi200Deprem;
         public System.Windows.Forms.ToolStripMenuItem tsmiDepremSayisi;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDepremeDair;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDepremAni;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDepremSonrasi;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAfetCantasi;
     }
 }
 

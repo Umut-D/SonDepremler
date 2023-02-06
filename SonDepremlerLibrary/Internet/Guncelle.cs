@@ -41,7 +41,7 @@ namespace SonDepremlerLibrary.Internet
         private void VersiyonlariKarsilastir()
         {
             // ToDo Mevcut Versiyon Alanı
-            if ("1.21" == SunucudakiVersiyon())
+            if ("1.22" == SunucudakiVersiyon())
                 MessageBox.Show(@"Program günceldir. Yenisi çıkana kadar şimdilik en iyisi bu.", @"Güncelle", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
             {

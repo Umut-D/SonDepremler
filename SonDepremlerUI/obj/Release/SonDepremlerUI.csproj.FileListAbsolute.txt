@@ -1,0 +1,18 @@
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerUI\bin\Release\Son Depremler.exe.config
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerUI\bin\Release\Son Depremler.exe
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerUI\bin\Release\Son Depremler.pdb
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerUI\bin\Release\SonDepremlerLibrary.dll
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerUI\bin\Release\HtmlAgilityPack.dll
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerUI\bin\Release\SonDepremlerLibrary.pdb
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerUI\bin\Release\HtmlAgilityPack.pdb
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerUI\bin\Release\HtmlAgilityPack.xml
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerUI\obj\Release\SonDepremlerUI.csproj.AssemblyReference.cache
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerUI\obj\Release\SonDepremlerUI.csproj.SuggestedBindingRedirects.cache
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerUI\obj\Release\SonDepremlerUI.FrmDepremeDair.resources
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerUI\obj\Release\SonDepremlerUI.FrmSonDepremler.resources
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerUI\obj\Release\SonDepremlerUI.Properties.Resources.resources
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerUI\obj\Release\SonDepremlerUI.csproj.GenerateResource.cache
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerUI\obj\Release\SonDepremlerUI.csproj.CoreCompileInputs.cache
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerUI\obj\Release\SonDepremlerUI.csproj.CopyComplete
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerUI\obj\Release\Son Depremler.exe
+D:\Belgelerim\Programlarım\C#\+ Github\SonDepremler\SonDepremlerUI\obj\Release\Son Depremler.pdb
